@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteBase /PHP/pethouse/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)/(.*)$ index.php?mod=$1&act=$2 [L]
+        #    page/home  index.php?mod=page&act=home
