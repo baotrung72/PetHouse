@@ -76,9 +76,10 @@
                         Sản Phẩm
                     </p>
                     <ul class="dropdown-menu dropdown-menu-dark">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <?php foreach ($dsdanhmuc as $dm):?>
+                        <li><a class="dropdown-item" href="#"><?=$dm['TenDM']?></a></li>
+                        
+                            <?php endforeach; ?>
                     </ul>
                 </li>
                 <li class="nav-item dropdown pt-2 ">
@@ -87,9 +88,11 @@
                         Dịch Vụ
                     </p>
                     <ul class="dropdown-menu dropdown-menu-dark">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    <?php foreach ($dsdichvu as $dmdv):?>
+                        <li><a class="dropdown-item" href="#"><?=$dmdv['TenLoaiDV']?></a></li>
+                        
+                            <?php endforeach; ?>
+                        
                     </ul>
                 </li>
                 <li class="nav-item">
