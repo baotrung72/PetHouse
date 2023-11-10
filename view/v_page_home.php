@@ -107,8 +107,12 @@
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title"><?= $sp['TenSP'] ?></h5>
-                                <p class="card-text">Kích Thước: <?= $sp['hinhdang'] ?></p>
-                                <p class="card-price">Giá: <del><?= $sp['Gia'] ?>đ</del><?= $sp['GiaKM'] ?>đ</p>
+                                <p class="card-text">Size: <strong><?= $sp['hinhdang'] ?></strong></p>
+                                <?php if (isset($sp['GiaKM']) && $sp['GiaKM'] > 0) : ?>
+                                    <p class="card-price" style="font-size: 14px;">Giá: <del><?= $sp['GiaKM'] ?>đ</del><strong><?= $sp['Gia'] ?>đ</strong></p>
+                                <?php else : ?>
+                                    <p class="card-price d-n" style="font-size: 14px;">Giá: <strong><?= $sp['Gia'] ?>đ</strong></p>
+                                <?php endif; ?>
                                 <div class="btn-buy d-flex text-center">
                                     <a href="#" class="btn btn-warning" style=" margin-left: 15px;">Chi
                                         Tiết</a>
@@ -136,8 +140,12 @@
                                 <?php endif; ?>
                                 <div class="card-body">
                                     <h5 class="card-title"><?= $sp['TenSP'] ?></h5>
-                                    <p class="card-text">Hình dạng: <?= $sp['hinhdang'] ?></p>
-                                    <p class="card-price">Giá: <?= $sp['Gia'] ?></p>
+                                    <p class="card-text">Size: <strong><?= $sp['hinhdang'] ?></strong></p>
+                                    <?php if (isset($sp['GiaKM']) && $sp['GiaKM'] > 0) : ?>
+                                        <p class="card-price" style="font-size: 14px;">Giá: <del><?= $sp['GiaKM'] ?>đ</del><strong><?= $sp['Gia'] ?>đ</strong></p>
+                                    <?php else : ?>
+                                        <p class="card-price d-n" style="font-size: 14px;">Giá: <strong><?= $sp['Gia'] ?>đ</strong></p>
+                                    <?php endif; ?>
                                     <div class="btn-buy d-flex text-center">
                                         <a href="#" class="btn btn-warning" style=" margin-left: 15px;">Chi Tiết</a>
                                         <a href="#" class="btn btn-warning" style=" margin-left: 50px;">Mua Ngay</a>
@@ -153,215 +161,78 @@
 </section>
 <section>
 
-    <div class="container">
+    <div class="container mb-5" style="margin-bottom:50px;">
 
         <div class="title  text-center mt-5 mt-5">
             <h2 style="font-weight: bolder; color: #fcb000;"> _ Dịch Vụ Thú Cưng _</h2>
         </div>
         <div class="row mt-5">
-            <div class="col" style="height: 440px;">
-                <div class="card" style="width: 18rem;">
-                    <img src="<?= $base_url ?>/template/assets_user/image/dv1.jpg" class="card-img-top" alt="..." style="height: 250px; object-fit: cover;">
-                    <div class="badge badge-danger bg-danger position-absolute" style="top: 20px; right: 20px;">
-                        Sale 7%</div>
-                    <div class="card-body">
-                        <h5 class="card-title">Dịch vụ spa (Chó Mèo)</h5>
-                        <p class="card-text">Cho thú cưng thư giản, tắm và cắt tỉa lông gọn gàn </p>
-                        <p class="card-price">Giá: <del>860.000đ</del> 720.000 </p>
-                        <div class="btn-buy d-flex text-center">
-                            <a href="#" class="btn btn-warning" style=" margin-left: 15px;">Chi
-                                Tiết </a>
-                            <a href="#" class="btn btn-warning" style=" margin-left: 50px;">Đặt
-                                Ngay</a>
+            <?php foreach ($dsServices as $dv) : ?>
+                <div class="col" style="height: 440px;">
+                    <div class="card" style="width: 18rem;">
+                        <img src="<?= $base_url ?>/template/assets_user/image/<?= $dv['Hinh'] ?>" class="card-img-top" alt="..." style="height: 250px; object-fit: cover;">
+                        <?php if (isset($sp['GiaKM']) && $sp['GiaKM']) : ?>
+                            <div class="badge badge-danger bg-danger position-absolute" style="top: 20px; right: 20px;">
+                                Sale <?= number_format((($sp['Gia'] - $sp['GiaKM']) / $sp['Gia']) * 100, 1) ?>%
+                            </div>
+                        <?php endif; ?>
+                        <div class="card-body">
+                            <h5 class="card-title" style="height: 40px;"><?= $dv['TenDV'] ?></h5>
+                            <p class="card-text"><?= $dv['mota'] ?></p>
+                            <?php if (isset($dv['GiaKM']) && $dv['GiaKM'] > 0) : ?>
+                                <p class="card-price" style="font-size: 14px;">Giá: <del><?= $dv['GiaKM'] ?>đ</del><strong><?= $dv['Gia'] ?>đ</strong></p>
+                            <?php else : ?>
+                                <p class="card-price d-n" style="font-size: 14px;">Giá: <strong><?= $dv['Gia'] ?>đ</strong></p>
+                            <?php endif; ?>
+                            <div class="btn-buy d-flex text-center">
+                                <a href="#" class="btn btn-warning" style=" margin-left: 15px;">Chi
+                                    Tiết </a>
+                                <a href="#" class="btn btn-warning" style=" margin-left: 50px;">Đặt
+                                    Ngay</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col" style="height: 440px;">
-                <div class="card" style="width: 18rem;">
-                    <img src="<?= $base_url ?>/template/assets_user/image/dv2.jpg" class="card-img-top" alt="..." style="height: 250px; object-fit: cover;">
-                    <div class="badge badge-danger bg-danger position-absolute d-none" style="top: 20px; right: 20px;">
-                        Sale 7%</div>
-                    <div class="card-body">
-                        <h5 class="card-title">Tiêm Ngừa Phòng Tránh Bệnh Dại</h5>
-                        <p class="card-text">Định kì 6 tháng cho một lần tiêm</p>
-                        <p class="card-price">Giá: 1.700.000đ/mũi</p>
-                        <div class="btn-buy d-flex text-center">
-                            <a href="#" class="btn btn-warning" style=" margin-left: 15px;">Chi
-                                Tiết </a>
-                            <a href="#" class="btn btn-warning" style=" margin-left: 50px;">Đặt
-                                Ngay</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col" style="height: 440px;">
-                <div class="card" style="width: 18rem;">
-                    <img src="<?= $base_url ?>/template/assets_user/image/dv3.jpg" class="card-img-top" alt="..." style="height: 250px; object-fit: cover;">
-                    <div class="badge badge-danger bg-danger position-absolute" style="top: 20px; right: 20px;">
-                        Sale 7%</div>
-                    <div class="card-body">
-                        <h5 class="card-title">Phối Giống các loài chó mèo anh quốc</h5>
-                        <p class="card-text">Giống phối tốt khỏe mạnh và giá rẻ</p>
-                        <p class="card-price">Giá: <del>1.660.000đ</del> 1.420.000 </p>
-                        <div class="btn-buy d-flex text-center">
-                            <a href="#" class="btn btn-warning btn-warning" style=" margin-left: 15px;">Chi
-                                Tiết </a>
-                            <a href="#" class="btn btn-warning btn-warning" style=" margin-left: 50px;">Đặt
-                                Ngay</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col" style="height: 440px;">
-                <div class="card" style="width: 18rem;">
-                    <img src="<?= $base_url ?>/template/assets_user/image/dv4.jpg" class="card-img-top" alt="..." style="height: 250px; object-fit: cover;">
-                    <div class="badge badge-danger bg-danger position-absolute d-none" style="top: 20px; right: 20px;">
-                        Sale 7%</div>
-                    <div class="card-body">
-                        <h5 class="card-title">Dịch vụ trông giữ chó mèo</h5>
-                        <p class="card-text">Tận tình chăm sóc đầy đủ và tốt nhất cho thú cưng của bạn
-                        </p>
-                        <p class="card-price">Giá: 120.000đ/ngày </p>
-                        <div class="btn-buy d-flex text-center">
-                            <a href="#" class="btn btn-warning" style="margin-left: 15px;">Chi
-                                Tiết </a>
-                            <a href="#" class="btn btn-warning " style="margin-left: 50px;">Đặt
-                                Ngay</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </section>
+<br>
 <section>
-    <div class="container text-center">
+    <div class="container mt-5">
         <div class="title  mt-5 ">
             <h2 style="font-weight: bolder; color: #fcb000; text-align: center;"> _ Thức Ăn & Đồ Dùng _
             </h2>
         </div>
         <div class="row mt-5">
-            <div class="col" style="height: 440px;">
-                <div class="card" style="width: 18rem;">
-                    <img src="<?= $base_url ?>/template/assets_user/image/thucan1.jpg" class="card-img-top" alt="..." style="height: 250px; object-fit: cover;">
-                    <div class="card-body">
-                        <h5 class="card-title">Xương thưởng cho Chó Orgo vị bò nướng 90g</h5>
-                        <p class="card-price">Giá: 60.000đ </p>
-                        <div class="btn-buy d-flex text-center">
-                            <a href="#" class="btn btn-warning" style=" margin-left: 15px;">Chi
-                                Tiết </a>
-                            <a href="#" class="btn btn-warning" style=" margin-left: 50px;">Mua
-                                Ngay</a>
+            <?php foreach ($dsToolFoods as $sp) : ?>
+                <div class="col mb-5" style="height: 440px;">
+                    <div class="card" style="width: 18rem;">
+                        <img src="<?= $base_url ?>/template/assets_user/image/<?= $sp['Hinh'] ?>" class="card-img-top" alt="..." style="height: 250px; object-fit: cover;">
+                        <?php if (isset($sp['GiaKM']) && $sp['GiaKM']) : ?>
+                            <div class="badge badge-danger bg-danger position-absolute" style="top: 20px; right: 20px;">
+                                Sale <?= number_format((($sp['Gia'] - $sp['GiaKM']) / $sp['Gia']) * 100, 1) ?>%
+                            </div>
+                        <?php endif; ?>
+                        <div class="card-body">
+                            <h5 class="card-title" style="height: 40px;"><?= $sp['TenSP'] ?></h5>
+                            <p class="card-text " style="font-size: 14px;">Size: <strong><?= $sp['hinhdang'] ?></strong></p>
+
+                            <?php if (isset($sp['GiaKM']) && $sp['GiaKM'] > 0) : ?>
+                                <p class="card-price" style="font-size: 14px;">Giá: <del><?= $sp['GiaKM'] ?>đ</del><strong><?= $sp['Gia'] ?>đ</strong></p>
+                            <?php else : ?>
+                                <p class="card-price" style="font-size: 14px;">Giá: <strong><?= $sp['Gia'] ?>đ</strong></p>
+                            <?php endif; ?>
+                            <div class="btn-buy d-flex text-center">
+                                <a href="#" class="btn btn-warning" style=" margin-left: 15px;">Chi
+                                    Tiết </a>
+                                <a href="#" class="btn btn-warning" style=" margin-left: 50px;">Mua
+                                    Ngay</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col" style="height: 440px;">
-                <div class="card" style="width: 18rem;">
-                    <img src="<?= $base_url ?>/template/assets_user/image/thucan2.jpg" class="card-img-top" alt="..." style="height: 250px; object-fit: cover;">
-                    <div class="card-body">
-                        <h5 class="card-title">Bánh thưởng cho chó hình xương Yaho 15g</h5>
-                        <p class="card-price">Giá: 45.000đ </p>
-                        <div class="btn-buy d-flex text-center">
-                            <a href="#" class="btn btn-warning" style=" margin-left: 15px;">Chi
-                                Tiết </a>
-                            <a href="#" class="btn btn-warning" style=" margin-left: 50px;">Mua
-                                Ngay</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col" style="height: 440px;">
-                <div class="card" style="width: 18rem;">
-                    <img src="<?= $base_url ?>/template/assets_user/image/thucan3.jpg" class="card-img-top" alt="..." style="height: 250px; object-fit: cover;">
-                    <div class="card-body">
-                        <h5 class="card-title">Bánh Immune Care tăng cường miễn dịch 60g</h5>
-                        <p class="card-price">Giá: 65.000đ </p>
-                        <div class="btn-buy d-flex text-center">
-                            <a href="#" class="btn btn-warning" style=" margin-left: 15px;">Chi
-                                Tiết </a>
-                            <a href="#" class="btn btn-warning" style=" margin-left: 50px;">Mua
-                                Ngay</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col" style="height: 440px;">
-                <div class="card" style="width: 18rem;">
-                    <img src="<?= $base_url ?>/template/assets_user/image/thucan4.jpg" class="card-img-top" alt="..." style="height: 250px; object-fit: cover;">
-                    <div class="card-body">
-                        <h5 class="card-title">Bánh Kanoodles chăm sóc răng miệng</h5>
-                        <p class="card-price">Giá: 35.000đ </p>
-                        <div class="btn-buy d-flex text-center">
-                            <a href="#" class="btn btn-warning" style=" margin-left: 15px;">Chi
-                                Tiết </a>
-                            <a href="#" class="btn btn-warning" style=" margin-left: 50px;">Mua
-                                Ngay</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col" style="height: 440px;">
-                <div class="card" style="width: 18rem;">
-                    <img src="<?= $base_url ?>/template/assets_user/image/dungcu1.jpg" class="card-img-top" alt="..." style="height: 250px; object-fit: cover;">
-                    <div class="card-body">
-                        <h5 class="card-title">Nhà vệ sinh mini cho mèo tơ</h5>
-                        <p class="card-price">Giá: 235.000đ </p>
-                        <div class="btn-buy d-flex text-center">
-                            <a href="#" class="btn btn-warning" style=" margin-left: 15px;">Chi
-                                Tiết </a>
-                            <a href="#" class="btn btn-warning" style=" margin-left: 50px;">Mua
-                                Ngay</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col" style="height: 440px;">
-                <div class="card" style="width: 18rem;">
-                    <img src="<?= $base_url ?>/template/assets_user/image/dc2.jpg" class="card-img-top" alt="..." style="height: 250px; object-fit: cover;">
-                    <div class="card-body">
-                        <h5 class="card-title">Bát đựng thức ăn cho chó mèo</h5>
-                        <p class="card-price">Giá: 75.000đ </p>
-                        <div class="btn-buy d-flex text-center">
-                            <a href="#" class="btn btn-warning" style=" margin-left: 15px;">Chi
-                                Tiết </a>
-                            <a href="#" class="btn btn-warning" style=" margin-left: 50px;">Mua
-                                Ngay</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col" style="height: 440px;">
-                <div class="card" style="width: 18rem;">
-                    <img src="<?= $base_url ?>/template/assets_user/image/dc3.jpg" class="card-img-top" alt="..." style="height: 250px; object-fit: cover;">
-                    <div class="card-body">
-                        <h5 class="card-title">Dụng cụ rọ mõm chó khi ra đường </h5>
-                        <p class="card-price">Giá: 45.000đ </p>
-                        <div class="btn-buy d-flex text-center">
-                            <a href="#" class="btn btn-warning" style=" margin-left: 15px;">Chi
-                                Tiết </a>
-                            <a href="#" class="btn btn-warning" style=" margin-left: 50px;">Mua
-                                Ngay</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col" style="height: 440px;">
-                <div class="card" style="width: 18rem;">
-                    <img src="<?= $base_url ?>/template/assets_user/image/dc4.jpg" class="card-img-top" alt="..." style="height: 250px; object-fit: cover;">
-                    <div class="card-body">
-                        <h5 class="card-title">Dụng cụ đựng nước riêng cho chó</h5>
-                        <p class="card-price">Giá: 25.000đ </p>
-                        <div class="btn-buy d-flex text-center">
-                            <a href="#" class="btn btn-warning" style=" margin-left: 15px;">Chi
-                                Tiết </a>
-                            <a href="#" class="btn btn-warning" style=" margin-left: 50px;">Mua
-                                Ngay</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </section>
@@ -415,29 +286,18 @@
     <div class="container-danhgia mt-5">
         <div id="carouselExample" class="carousel slide">
             <div class="carousel-inner " style="height: 300px;">
-                <div class="carousel-item active text-center p-3" style="background-color: #ebf0f8;">
-                    <div class="col ">
-                        <img src="<?= $base_url ?>/template/assets_user/image/goku.jpg" alt="" style="border-radius: 50%; width: 120px; height: 120px;">
+                <?php foreach ($dsComments as $cmt) : ?>
+                    <div class="carousel-item active text-center p-3" style="background-color: #ebf0f8;">
+                        <div class="col ">
+                            <img src="<?= $base_url ?>/template/assets_user/image/<?= $cmt['HinhAnh'] ?>" alt="" style="border-radius: 50%; width: 120px; height: 120px; object-fit: cover;">
+                        </div>
+                        <div class="m-4" style="padding: 0 20%;">
+                            <span><?= $cmt['NoiDung'] ?></span>
+                        </div>
+                        <div class="tacgia mb-1">Tác giả: <?= $cmt['HoTen'] ?></div>
+                        <div class="nghenghiep">Nghề Nghiệp: <?= $cmt['NgheNghiep'] ?> </div>
                     </div>
-                    <div class="m-4" style="padding: 0 20%;">
-                        <span>Tôi rất vui được bình luận về thú cưng của bạn trên website này!
-                            Đó có thể là loại thú cưng, đặc điểm nổi bật, tính cách tuyệt vời!</span>
-                    </div>
-                    <div class="tacgia mb-1">Tác giả: Anh Bảo Trung</div>
-                    <div class="nghenghiep">Nghề Nghiệp: Lập Trình Web</div>
-                </div>
-                <div class="carousel-item text-center p-3" style="background-color: #ebf0f8;">
-                    <div class="col ">
-                        <img src="<?= $base_url ?>/template/assets_user/image/goku.jpg" alt="" style="border-radius: 50%; width: 120px; height: 120px;">
-                    </div>
-                    <div class="m-4">
-                        <span class="text-center">Tôi rất vui được bình luận về thú cưng của bạn trên website
-                            này!
-                        </span>
-                    </div>
-                    <div class="tacgia mb-1">Tác giả: Anh Bảo Trung</div>
-                    <div class="nghenghiep">Nghề Nghiệp: Lập Trình Web</div>
-                </div>
+                <?php endforeach; ?>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -458,39 +318,18 @@
         </div>
         <div class="container ">
             <div class="row">
-                <div class="col m-2" style=" width: 310px; ">
-                    <img src="<?= $base_url ?>/template/assets_user/image/tt5.webp" alt="" style="width: 400px; height: 250px; margin-right: 20px; object-fit: cover;">
-                    <div style="margin: 10px 0;">
-                        <strong><span>Ngày Hội SIÊU SALE “HAMSTER” 8/8</span></strong>
-                    </div>
-                    <p style="font-size: 14px;">Hòa vào không khí rộn ràng của Ngày hội siêu sale trên toàn
-                        quốc.
-                        Ngày Lễ hội mua sắm 8 tháng
-                        8.</p>
+                <?php foreach ($dsPosts as $bv) : ?>
+                    <div class="col m-2" style=" width: 310px; ">
+                        <img src="<?= $base_url ?>/template/assets_user/image/<?= $bv['Hinh'] ?>" alt="" style="width: 400px; height: 250px; margin-right: 20px; object-fit: cover;">
+                        <div style="margin: 10px 0;">
+                            <strong><span><?= $bv['TieuDe'] ?></span></strong>
+                        </div>
+                        <div style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; content:'...'">
+                            <p style="font-size: 14px; ;"><?= $bv['NoiDung'] ?></p>
+                        </div>
 
-                </div>
-                <div class="col m-2" style=" width: 310px; ">
-                    <img src="<?= $base_url ?>/template/assets_user/image/tt5.webp" alt="" style="width: 400px; height: 250px; margin-right: 20px; object-fit: cover;">
-                    <div style="margin: 10px 0;">
-                        <strong><span>Ngày Hội SIÊU SALE “HAMSTER” 8/8</span></strong>
                     </div>
-                    <p style="font-size: 14px;">Hòa vào không khí rộn ràng của Ngày hội siêu sale trên toàn
-                        quốc.
-                        Ngày Lễ hội mua sắm 8 tháng
-                        8.</p>
-
-                </div>
-                <div class="col m-2" style=" width: 310px; ">
-                    <img src="<?= $base_url ?>/template/assets_user/image/tt5.webp" alt="" style="width: 400px; height: 250px; margin-right: 20px; object-fit: cover;">
-                    <div style="margin: 10px 0;">
-                        <strong><span>Ngày Hội SIÊU SALE “HAMSTER” 8/8</span></strong>
-                    </div>
-                    <p style="font-size: 14px;">Hòa vào không khí rộn ràng của Ngày hội siêu sale trên toàn
-                        quốc.
-                        Ngày Lễ hội mua sắm 8 tháng
-                        8.</p>
-
-                </div>
+                <?php endforeach; ?>
                 <div class="text-center mt-3">
                     <button type="button" class="btn btn-warning text-center"><a href="#" style="color: #212529; text-decoration: none;">Xem Thêm</a></button>
 
