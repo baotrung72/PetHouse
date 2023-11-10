@@ -20,14 +20,14 @@
                     <label for="validationCustom02" class="form-label">Email:*</label>
                     <input type="email" name="Email" class="form-control" id="validationCustom02" placeholder="VD: name@gmail.com" required>
                     <div class="invalid-feedback">
-                        Nhập đúng định dạng email.
+                        Nhập đúng định dạng email!
                     </div>
                 </div>
                 <div class="col mb-4">
                     <label for="validationCustom03" class="form-label">Mật khẩu:*</label>
                     <input type="password" name="MatKhau" class="form-control" id="validationCustom03" minlength="6" placeholder="Mật khẩu phải lớn 5 ký tự" required>
                     <div class="invalid-feedback">
-                        Mật Khẩu không đúng vui lòng thử lại.
+                        Vui lòng nhập mật khẩu!
                     </div>
                 </div>
                 <?php if (isset($_SESSION['error'])) : ?>
