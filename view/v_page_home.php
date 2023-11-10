@@ -98,49 +98,54 @@
         </div>
         <div class="container ">
             <div class="row">
-                <?php foreach ($newproducts as $sp):?>
-                <div class="col" style="height: 440px;">
-                    <div class="card" style="width: 18rem;">
-                        <img src="<?= $base_url ?>/template/assets_user/image/<?=$sp['Hinh']?>" class="card-img-top" style="height:250px; object-fit: cover;" alt="...">
-                        <div class="badge badge-danger bg-danger position-absolute" style="top: 20px; right: 20px;">
+                <?php foreach ($newproducts as $sp) : ?>
+                    <div class="col" style="height: 440px;">
+                        <div class="card" style="width: 18rem;">
+                            <img src="<?= $base_url ?>/template/assets_user/image/<?= $sp['Hinh'] ?>" class="card-img-top" style="height:250px; object-fit: cover;" alt="...">
+                            <div class="badge badge-danger bg-danger position-absolute" style="top: 20px; right: 20px;">
+                                Sale <?= number_format((($sp['Gia'] - $sp['GiaKM']) / $sp['Gia']) * 100, 1) ?>%
                             </div>
-                        <div class="card-body">
-                            <h5 class="card-title"><?=$sp['TenSP']?></h5>
-                            <p class="card-text">Hình dạng: <?=$sp['hinhdang']?></p>
-                            <p class="card-price">Giá: <del><?=$sp['Gia']?>đ</del><?=$sp['GiaKM']?>đ</p>
-                            <div class="btn-buy d-flex text-center">
-                                <a href="#" class="btn btn-warning" style=" margin-left: 15px;">Chi
-                                    Tiết</a>
-                                <a href="#" class="btn btn-warning" style=" margin-left: 50px;">Mua
-                                    Ngay</a>
+                            <div class="card-body">
+                                <h5 class="card-title"><?= $sp['TenSP'] ?></h5>
+                                <p class="card-text">Kích Thước: <?= $sp['hinhdang'] ?></p>
+                                <p class="card-price">Giá: <del><?= $sp['Gia'] ?>đ</del><?= $sp['GiaKM'] ?>đ</p>
+                                <div class="btn-buy d-flex text-center">
+                                    <a href="#" class="btn btn-warning" style=" margin-left: 15px;">Chi
+                                        Tiết</a>
+                                    <a href="#" class="btn btn-warning" style=" margin-left: 50px;">Mua
+                                        Ngay</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <?php endforeach;?>
+                <?php endforeach; ?>
             </div>
             <div class="title-bosat">
                 <div class="title text-center mt-5 mt-5">
                     <h2 style="font-weight: bolder; color: #fcb000;"> _ Thú Cưng Bò Sát _</h2>
                 </div>
                 <div class="row mt-5">
-                    <?php foreach ($reptileproducts as $sp):?>
-                    <div class="col" style="height: 440px;">
-                        <div class="card" style="width: 18rem;">
-                            <img src="<?= $base_url ?>/template/assets_user/image/<?=$sp['Hinh']?>" class="card-img-top" style="height:250px; object-fit: cover;" alt="...">
-                            <div class="badge badge-danger bg-danger position-absolute" style="top: 20px; right: 20px;">Sale 7%</div>
-                            <div class="card-body">
-                                <h5 class="card-title"><?=$sp['TenSP']?></h5>
-                                <p class="card-text">Hình dạng: <?=$sp['hinhdang']?></p>
-                                <p class="card-price">Giá: <?=$sp['Gia']?></p>
-                                <div class="btn-buy d-flex text-center">
-                                    <a href="#" class="btn btn-warning" style=" margin-left: 15px;">Chi Tiết</a>
-                                    <a href="#" class="btn btn-warning" style=" margin-left: 50px;">Mua Ngay</a>
+                    <?php foreach ($reptileproducts as $sp) : ?>
+                        <div class="col" style="height: 440px;">
+                            <div class="card" style="width: 18rem;">
+                                <img src="<?= $base_url ?>/template/assets_user/image/<?= $sp['Hinh'] ?>" class="card-img-top" style="height:250px; object-fit: cover;" alt="...">
+                                <?php if (isset($sp['GiaKM']) && $sp['GiaKM']) : ?>
+                                    <div class="badge badge-danger bg-danger position-absolute" style="top: 20px; right: 20px;">
+                                        Sale <?= number_format((($sp['Gia'] - $sp['GiaKM']) / $sp['Gia']) * 100, 1) ?>%
+                                    </div>
+                                <?php endif; ?>
+                                <div class="card-body">
+                                    <h5 class="card-title"><?= $sp['TenSP'] ?></h5>
+                                    <p class="card-text">Hình dạng: <?= $sp['hinhdang'] ?></p>
+                                    <p class="card-price">Giá: <?= $sp['Gia'] ?></p>
+                                    <div class="btn-buy d-flex text-center">
+                                        <a href="#" class="btn btn-warning" style=" margin-left: 15px;">Chi Tiết</a>
+                                        <a href="#" class="btn btn-warning" style=" margin-left: 50px;">Mua Ngay</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <?php endforeach;?>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </div>

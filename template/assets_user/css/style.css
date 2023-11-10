@@ -7,9 +7,9 @@ del{
     color: red;
     margin:0 10px 0 5px;
 }
-a{
+a{  
     color: black;
-    font-weight: 600;
+    font-weight: 400;
     transition: 0.3;
     text-decoration: none;
 }
@@ -23,4 +23,8 @@ td {
 
 h1{
     text-align: center;
+}
+.title{
+    font-family: 'Poppins', sans-serif;
+
 }
