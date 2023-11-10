@@ -1,4 +1,4 @@
-document.getElementById('subtract').addEventListener('click', function() {
+document.getElementById('subtractquantity').addEventListener('click', function() {
     var quantityElement = document.getElementById('quantity');
     var quantity = parseInt(quantityElement.innerText);
     if (quantity > 0) {
