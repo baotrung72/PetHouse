@@ -78,7 +78,7 @@
                         Dịch Vụ
                     </p>
                     <ul class="dropdown-menu dropdown-menu-dark">
-                        <?php foreach ($dsdichvu as $dmdv) : ?>
+                        <?php foreach ($dsloaidv as $dmdv) : ?>
                             <li><a class="dropdown-item" href="#"><?= $dmdv['TenLoaiDV'] ?></a></li>
 
                         <?php endforeach; ?>
