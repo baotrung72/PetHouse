@@ -338,3 +338,27 @@
         </div>
     </div>
 </section>
+<section>
+            <div class="brands  mt-5">
+                <div class="container text-center">
+                    <div class="row ">
+                        <div class="col">
+                            <img src="<?= $base_url ?>/template/assets_user/image/b1.webp" alt="">
+                        </div>
+                        <div class="col">
+                            <img src="<?= $base_url ?>/template/assets_user/image/b2.webp" alt="">
+                        </div>
+                        <div class="col">
+                            <img src="<?= $base_url ?>/template/assets_user/image/b3.webp" alt="">
+                        </div>
+                        <div class="col">
+                            <img src="<?= $base_url ?>/template/assets_user/image/b4.webp" alt="">
+                        </div>
+                        <div class="col">
+                            <img src="<?= $base_url ?>/template/assets_user/image/b5.webp" alt="">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>

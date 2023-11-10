@@ -37,18 +37,24 @@
                             <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
                                 <ul class="navbar-nav">
                                     <li class="nav-item dropdown">
-                                        <button class="btn dropdown-toggle border-0" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="fa-solid fa-user-tie" style="font-size: 24px;"></i>
-                                        </button>
-                                        <ul class="dropdown-menu end-0" style="left:auto">
-                                            <li><a class="dropdown-item active" href="#">Thông Tin</a></li>
-                                            <li><a class="dropdown-item" href="#">Lịch Sử</a></li>
-                                            <li><a class="dropdown-item" href="#">Trang Quản Trị</a></li>
-                                            <li>
-                                                <hr class="dropdown-divider">
-                                            </li>
-                                            <li><a class="dropdown-item" href="#">Đăng Xuất</a></li>
-                                        </ul>
+                                        <?php if (!isset($_SESSION['user'])) : ?>
+                                                <a href="<?=$base_url?>/user/login"><i class="fa-solid fa-user-tie" style="font-size: 24px; margin-right:10px;"></i></a>
+                                        <?php else : ?>
+                                            <button class="btn dropdown-toggle border-0" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <img src="<?= $base_url?>/template/assets_user/image/<?= $_SESSION['user']['HinhAnh'] ?>" style="border-radius: 50%; object-fit:cover;" width="35px" height="35px" alt="">
+                                            </button>
+                                            <ul class="dropdown-menu end-0" style="left:auto">
+                                                <li><a class="dropdown-item active" href="#">Thông Tin</a></li>
+                                                <li><a class="dropdown-item" href="#">Lịch Sử</a></li>
+                                                <?php if ($_SESSION['user']['Quyen'] == 1) : ?>
+                                                    <li><a class="dropdown-item" href="#">Trang Quản Trị</a></li>
+                                                <?php endif; ?>
+                                                <li>
+                                                    <hr class="dropdown-divider">
+                                                </li>
+                                                <li><a class="dropdown-item" href="<?= $base_url ?>/user/logout">Đăng Xuất</a></li>
+                                            </ul>
+                                        <?php endif; ?>
                                         <img src="<?= $base_url ?>/template/assets_user/image/viet-nam.png" alt="" style="width: 20px;" class="ml-3">
                                         <span>VI</span>
                                     </li>
@@ -101,30 +107,6 @@
     <main>
         <!-- include phần ruột của trang chủ từ v_page_home -->
         <?php include_once 'view/v_' . $view_name . '.php'; ?>
-        <section>
-            <div class="brands  mt-5">
-                <div class="container text-center">
-                    <div class="row ">
-                        <div class="col">
-                            <img src="<?= $base_url ?>/template/assets_user/image/b1.webp" alt="">
-                        </div>
-                        <div class="col">
-                            <img src="<?= $base_url ?>/template/assets_user/image/b2.webp" alt="">
-                        </div>
-                        <div class="col">
-                            <img src="<?= $base_url ?>/template/assets_user/image/b3.webp" alt="">
-                        </div>
-                        <div class="col">
-                            <img src="<?= $base_url ?>/template/assets_user/image/b4.webp" alt="">
-                        </div>
-                        <div class="col">
-                            <img src="<?= $base_url ?>/template/assets_user/image/b5.webp" alt="">
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </section>
 
     </main>
     <footer style="background-color: #fcb850; padding: 10px 0;">
@@ -211,7 +193,26 @@
         </div>
     </footer>
 </body>
+<script src="<?=$base_url?>/template/assets_user/javascript/index.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="<?= $base_url ?>/template/assets_user/javascript/index.js"></script>
+<script>
+    (function() {
+        'use strict';
+
+        var forms = document.querySelectorAll('.needs-validation');
+
+        Array.from(forms).forEach(function(form) {
+            form.addEventListener('submit', function(event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+
+                form.classList.add('was-validated');
+            });
+        });
+    })();
+</script>
 
 </html>

@@ -6,13 +6,11 @@
         switch ($_GET['act']){ 
             case 'home':
                 //lấy dữ liệu từ model
-                include_once 'model/m_categories.php';
                 include_once 'model/m_products.php';
                 include_once 'model/m_comment.php';
                 include_once 'model/m_posts.php';
                 
-                $dsdanhmuc = getAll_categoris(); // lấy ra danh mục sản phẩm
-                $dsloaidv = getAll_cateService();
+                
                 
                 $newproducts = getNew_products();// lấy ra các sp mới
                 $reptileproducts = getReptile_products();// lấy ra các splà bò sát

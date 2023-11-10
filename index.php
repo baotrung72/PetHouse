@@ -1,20 +1,25 @@
 <?php
-    //Điều hướng đến các controllers
-    include_once 'config.php';
+//Điều hướng đến các controllers
+include_once 'config.php';
+include_once 'model/m_categories.php';
+$dsdanhmuc = getAll_categoris(); // lấy ra danh mục sản phẩm
+$dsloaidv = getAll_cateService();
 
-    if(isset($_GET['mod'])){
-        switch ($_GET['mod']) {
-            case 'page':
-                $ctrl_name = 'page';
-                break;
-            
-            default:
-                # code...
-                break;
-        }
-        include_once 'controllers/c_'.$ctrl_name.'.php';
-    }else{
-        //điều hướng về trang chủ
-        header('Location: page/home');
+if (isset($_GET['mod'])) {
+    switch ($_GET['mod']) {
+        case 'page':
+            $ctrl_name = 'page';
+            break;
+        case 'user':
+            $ctrl_name = 'user';
+            break;
+
+        default:
+            # code...
+            break;
     }
-?>
+    include_once 'controllers/c_'.$ctrl_name.'.php';
+} else {
+    //điều hướng về trang chủ
+    header('Location: page/home');
+}
