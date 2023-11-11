@@ -4,4 +4,5 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
 RewriteRule ^(.*)/(.*)$ index.php?mod=$1&act=$2 [L]
-        #    page/home  index.php?mod=page&act=home
+
+RewriteRule ^product/detail/(.*)$ index.php?mod=product&act=detail&id=$1 [L]

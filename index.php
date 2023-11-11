@@ -13,6 +13,12 @@ if (isset($_GET['mod'])) {
         case 'user':
             $ctrl_name = 'user';
             break;
+        case 'product':
+            $ctrl_name = 'product';
+            break;
+        case 'category':
+            $ctrl_name = 'category';
+            break;
 
         default:
             # code...
