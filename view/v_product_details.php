@@ -1,7 +1,7 @@
 <section>
     <nav aria-label="breadcrumb" class="section-p2" style="padding: 20px 0 30px 7.5%;">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item" style="text-decoration: none; color: #212529;"><a href="<?=$base_url?>/page/home">Trang Chủ</a>
+            <li class="breadcrumb-item" style="text-decoration: none; color: #212529;"><a href="<?= $base_url ?>/page/home">Trang Chủ</a>
             </li>
             <li class="breadcrumb-item" style="text-decoration: none; color: #212529;"><a href="#">Sản Phẩm</a></li>
             <li class="breadcrumb-item" style="text-decoration: none; color: #212529;">Chi Tiết</li>
@@ -79,17 +79,17 @@
         <h2 style="padding-top: 50px;" class="text-warning">Một Số Đánh Giá</h2>
         <div class="row" style="padding-top: 50px;">
             <div class="col-12">
-                <?php foreach($dsComments as $cmt):?>
-                <div class="d-flex" style=" max-width: 500px;">
-                    <div class="p-2flex-shrink-1 "><img src="<?= $base_url ?>/template/assets_user/image/<?= $cmt['HinhAnh'] ?>" alt="" style="width: 60px; height: 60px; object-fit: cover; border-radius: 50%;">
+                <?php foreach ($dsComments as $cmt) : ?>
+                    <div class="d-flex" style=" max-width: 500px;">
+                        <div class="p-2flex-shrink-1 "><img src="<?= $base_url ?>/template/assets_user/image/<?= $cmt['HinhAnh'] ?>" alt="" style="width: 60px; height: 60px; object-fit: cover; border-radius: 50%;">
+                        </div>
+                        <div class="p-2 w-100 ">
+                            <h6><?= $cmt['HoTen'] ?></h6>
+                            <span style="font-size: 12px;">Thời Gian: <?= $cmt['NgayGui'] ?></span>
+                            <p style="width: 600px; padding-top: 10px;"><?= $cmt['NoiDung'] ?>😁</p>
+                        </div>
                     </div>
-                    <div class="p-2 w-100 ">
-                        <h6><?= $cmt['HoTen'] ?></h6>
-                        <span style="font-size: 12px;">Thời Gian: <?= $cmt['NgayGui'] ?></span>
-                        <p style="width: 600px; padding-top: 10px;"><?= $cmt['NoiDung'] ?>😁</p>
-                    </div>
-                </div>
-                <?php endforeach;?>
+                <?php endforeach; ?>
             </div>
             <div class="col-0">
 
@@ -110,7 +110,7 @@
                                 </div>
                             <?php endif; ?>
                             <div class="card-body">
-                                <h5 class="card-title"><?= $sp['TenSP'] ?></h5>
+                                <h5 class="card-title" style="height: 40px;"><?= $sp['TenSP'] ?></h5>
                                 <p class="card-text">Size: <strong><?= $sp['hinhdang'] ?></strong></p>
                                 <?php if (isset($sp['GiaKM']) && $sp['GiaKM'] > 0) : ?>
                                     <p class="card-price" style="font-size: 14px;">Giá: <del><?= $sp['GiaKM'] ?>đ</del><strong><?= $sp['Gia'] ?>đ</strong></p>
@@ -118,7 +118,7 @@
                                     <p class="card-price d-n" style="font-size: 14px;">Giá: <strong><?= $sp['Gia'] ?>đ</strong></p>
                                 <?php endif; ?>
                                 <div class="btn-buy d-flex text-center">
-                                    <a href="<?=$base_url?>/product/detail&id=<?=$sp['MaSP']?>" class="btn btn-warning" style=" margin-left: 15px;">Chi Tiết</a>
+                                    <a href="<?= $base_url ?>/product/detail&id=<?= $sp['MaSP'] ?>" class="btn btn-warning" style=" margin-left: 15px;">Chi Tiết</a>
                                     <a href="#" class="btn btn-warning" style=" margin-left: 50px;">Mua Ngay</a>
                                 </div>
                             </div>

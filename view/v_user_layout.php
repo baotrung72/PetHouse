@@ -18,7 +18,7 @@
         <div class="container-header">
             <nav class="navbar navbar-expand-lg p-0">
                 <div class="container-fluid">
-                    <a class="navbar-brand " href="<?=$base_url?>/page/home"><img src="<?= $base_url ?>/template/assets_user/image/logo.png" alt="" class="w-25 h-25"></a>
+                    <a class="navbar-brand " href="<?= $base_url ?>/page/home"><img src="<?= $base_url ?>/template/assets_user/image/logo.png" alt="" class="w-25 h-25"></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -38,10 +38,10 @@
                                 <ul class="navbar-nav">
                                     <li class="nav-item dropdown">
                                         <?php if (!isset($_SESSION['user'])) : ?>
-                                                <a href="<?=$base_url?>/user/login"><i class="fa-solid fa-user-tie" style="font-size: 24px; margin-right:10px;"></i></a>
+                                            <a href="<?= $base_url ?>/user/login"><i class="fa-solid fa-user-tie" style="font-size: 24px; margin-right:10px;"></i></a>
                                         <?php else : ?>
                                             <button class="btn dropdown-toggle border-0" data-bs-toggle="dropdown" aria-expanded="false">
-                                                <img src="<?= $base_url?>/template/assets_user/image/<?= $_SESSION['user']['HinhAnh'] ?>" style="border-radius: 50%; object-fit:cover;" width="35px" height="35px" alt="">
+                                                <img src="<?= $base_url ?>/template/assets_user/image/<?= $_SESSION['user']['HinhAnh'] ?>" style="border-radius: 50%; object-fit:cover;" width="35px" height="35px" alt="">
                                             </button>
                                             <ul class="dropdown-menu end-0" style="left:auto">
                                                 <li><a class="dropdown-item active" href="#">Thông Tin</a></li>
@@ -66,30 +66,24 @@
             </nav>
             <ul class="nav nav-underline justify-content-center h-90 p-sm-2" style="background-color: #fcb000; font-size: 20px; font-weight: 600;">
                 <li class="nav-item">
-                    <a class="nav-link active " aria-current="page" href="#" style="color: #212529;">Trang Chủ</a>
+                    <a class="nav-link active " aria-current="page" href="<?=$base_url?>/page/home" style="color: #212529;">Trang Chủ</a>
                 </li>
-                <li class="nav-item dropdown pt-2 ">
+                <li class="nav-item dropdown pt-2 d-flex">
+                    <a href="<?=$base_url?>/product/product-total">Sản Phẩm</a>
                     <p class="  dropdown-toggle" data-bs-toggle="dropdown" style=" font-size: 20px; font-weight: 600;" aria-expanded="false">
-                        Sản Phẩm
                     </p>
                     <ul class="dropdown-menu dropdown-menu">
                         <?php foreach ($dsdanhmuc as $dm) : ?>
-                            <li><a class="dropdown-item" href="#"><?= $dm['TenDM'] ?></a></li>
+                            <li><a class="dropdown-item" href="<?=$base_url?>/category/category-detail&id=<?= $dm['MaDM'] ?>"><?= $dm['TenDM'] ?></a></li>
 
                         <?php endforeach; ?>
                     </ul>
                 </li>
-                <li class="nav-item dropdown pt-2 ">
-                    <p class="  dropdown-toggle" data-bs-toggle="dropdown" style=" font-size: 20px; font-weight: 600;margin-left: 20px;" aria-expanded="false">
-                        Dịch Vụ
+                <li class="nav-item pt-2 ">
+                    <p class=" "  style=" font-size: 20px; font-weight: 600;margin-left: 20px;" >
+                        <a href="<?=$base_url?>/product/service-total">Dịch Vụ</a>
                     </p>
-                    <ul class="dropdown-menu dropdown-menu">
-                        <?php foreach ($dsloaidv as $dmdv) : ?>
-                            <li><a class="dropdown-item" href="#"><?= $dmdv['TenLoaiDV'] ?></a></li>
-
-                        <?php endforeach; ?>
-
-                    </ul>
+                    
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" style="color: #212529;">Giới Thiệu</a>
@@ -137,10 +131,9 @@
                     <h5>Góc Hỗ Trợ</h5>
                     <div class="mt-4">
                         <a href="#" style="text-decoration: none; color: #212529;">Giới Thiệu Về PetHouse</a>
-                        <a href="#" style="text-decoration: none; color: #212529;">Giới Thiệu Về PetHouse</a>
-                        <a href="#" style="text-decoration: none; color: #212529;">Giới Thiệu Về PetHouse</a>
-                        <a href="#" style="text-decoration: none; color: #212529;">Giới Thiệu Về PetHouse</a>
-                        <a href="#" style="text-decoration: none; color: #212529;">Giới Thiệu Về PetHouse</a>
+                        <a href="#" style="text-decoration: none; color: #212529;">Hướng Dẫn Mua Hàng</a>
+                        <a href="#" style="text-decoration: none; color: #212529;">Liên Hệ Với Chúng Tôi</a>
+                        <a href="#" style="text-decoration: none; color: #212529;">Ưu Đãi Khi Mua Hàng</a>
                     </div>
                 </div>
                 <div class="col-3">
@@ -149,13 +142,13 @@
                         <a href="#" style="text-decoration: none; color: #212529;">Chính Sách Bảo Mật</a>
                     </div>
                     <div class="d-block">
-                        <a href="#" style="text-decoration: none; color: #212529;">Chính Sách Bảo Mật</a>
+                        <a href="#" style="text-decoration: none; color: #212529;">Điều Khoản Sử Dụng</a>
                     </div>
                     <div class="d-block">
-                        <a href="#" style="text-decoration: none; color: #212529;">Chính Sách Bảo Mật</a>
+                        <a href="#" style="text-decoration: none; color: #212529;">Chính Sách Đổi Trả</a>
                     </div>
                     <div class="d-block">
-                        <a href="#" style="text-decoration: none; color: #212529;">Chính Sách Bảo Mật</a>
+                        <a href="#" style="text-decoration: none; color: #212529;">Đặt Hàng Và Thanh Toán</a>
                     </div>
                 </div>
                 <div class="col-3">
@@ -193,7 +186,7 @@
         </div>
     </footer>
 </body>
-<script src="<?=$base_url?>/template/assets_user/javascript/index.js"></script>
+<script src="<?= $base_url ?>/template/assets_user/javascript/index.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>

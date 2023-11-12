@@ -8,12 +8,22 @@ if (isset($_GET['act'])) {
             //lấy dữ liệu từ model
             include_once 'model/m_categories.php';
             include_once 'model/m_comment.php';
-            $detailcategory = category_getById($_GET['id']);// lấy 1 sản phẩm theo id
+            $detailcategory = category_getById($_GET['id']); // lấy 1 sản phẩm theo id
             $categorySimilar = category_getSimilar($detailcategory['MaDV']); // lấy sản phẩm tượng tự theo danh mục 
-            
+
             $dsComments = getStand_comments(); //lấy comment nổi bật
             // hiển thị dữ liệu ra view
             $view_name = 'category_details';
+            break;
+        case 'category-detail':
+            //lấy dữ liệu từ model
+            include_once 'model/m_categories.php';
+            include_once 'model/m_products.php';
+
+            $getDmById = getbyId_category($_GET['id']);
+            $productInCate = prodduct_getbyIdcategory($_GET['id']);
+            // hiển thị dữ liệu ra view
+            $view_name = 'category_products';
             break;
         default:
             # code...
