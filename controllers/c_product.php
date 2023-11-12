@@ -42,6 +42,16 @@ if (isset($_GET['act'])) {
             // hiển thị dữ liệu ra view
             $view_name = 'product_details';
             break;
+        case 'search':
+            //lấy dữ liệu từ model
+            include_once 'model/m_products.php';
+            if(isset($_POST['keyword'])){
+                header("Location: ".$base_url."/product/search&keyword=".$_POST['keyword']);
+            }
+            $ketQuaTimKiem = product_search($_GET['keyword']);
+            // hiển thị dữ liệu ra view
+            $view_name = 'product_search';
+            break;
         default:
             # code...
             break;
