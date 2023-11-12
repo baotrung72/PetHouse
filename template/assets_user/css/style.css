@@ -28,3 +28,8 @@ h1{
     font-family: 'Poppins', sans-serif;
 
 }
+link[rel="icon"] {
+    width: 32px; 
+    height: 32px; 
+    filter: brightness(150%);
+}

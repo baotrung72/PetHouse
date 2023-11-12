@@ -33,4 +33,7 @@
     function getAll_service(){
         return pdo_query("SELECT* From dichvu WHERE MaLoaiDV = 1");
     }
+    function product_search($keyword){
+        return pdo_query("SELECT * FROM sanpham WHERE TenSP LIKE '%$keyword%'");
+    }
 ?>

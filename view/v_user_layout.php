@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Chủ</title>
+    <title>PetHouse</title>
+    <link rel="icon" href="<?= $base_url ?>/path/to/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" href="<?= $base_url ?>/template/assets_user/image/logo.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,9 +25,9 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <form class="d-flex " role="search" style="width: 450px; ">
-                            <input class="form-control w-100" style="border-top-left-radius: 20px;border-bottom-left-radius: 20px;border-top-right-radius: 0px; border-bottom-right-radius: 0px; border: 1.5px solid #fcb000;" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success" style="border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-top-left-radius: 0;border-bottom-left-radius: 0; border: 1.5px solid #fcb000;" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <form class="d-flex " role="search" style="width: 450px; " method="post" action="<?= $base_url ?>/product/search">
+                            <input class="form-control w-100" name="keyword" style="border-top-left-radius: 20px;border-bottom-left-radius: 20px;border-top-right-radius: 0px; border-bottom-right-radius: 0px; border: 1.5px solid #fcb000;" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit" name="submit" style="border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-top-left-radius: 0;border-bottom-left-radius: 0; border: 1.5px solid #fcb000;" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                         </form>
                     </div>
                     <nav class="navbar navbar-expand-lg ">
@@ -66,24 +68,24 @@
             </nav>
             <ul class="nav nav-underline justify-content-center h-90 p-sm-2" style="background-color: #fcb000; font-size: 20px; font-weight: 600;">
                 <li class="nav-item">
-                    <a class="nav-link active " aria-current="page" href="<?=$base_url?>/page/home" style="color: #212529;">Trang Chủ</a>
+                    <a class="nav-link active " aria-current="page" href="<?= $base_url ?>/page/home" style="color: #212529;">Trang Chủ</a>
                 </li>
                 <li class="nav-item dropdown pt-2 d-flex">
-                    <a href="<?=$base_url?>/product/product-total">Sản Phẩm</a>
+                    <a href="<?= $base_url ?>/product/product-total">Sản Phẩm</a>
                     <p class="  dropdown-toggle" data-bs-toggle="dropdown" style=" font-size: 20px; font-weight: 600;" aria-expanded="false">
                     </p>
                     <ul class="dropdown-menu dropdown-menu">
                         <?php foreach ($dsdanhmuc as $dm) : ?>
-                            <li><a class="dropdown-item" href="<?=$base_url?>/category/category-detail&id=<?= $dm['MaDM'] ?>"><?= $dm['TenDM'] ?></a></li>
+                            <li><a class="dropdown-item" href="<?= $base_url ?>/category/category-detail&id=<?= $dm['MaDM'] ?>"><?= $dm['TenDM'] ?></a></li>
 
                         <?php endforeach; ?>
                     </ul>
                 </li>
                 <li class="nav-item pt-2 ">
-                    <p class=" "  style=" font-size: 20px; font-weight: 600;margin-left: 20px;" >
-                        <a href="<?=$base_url?>/product/service-total">Dịch Vụ</a>
+                    <p class=" " style=" font-size: 20px; font-weight: 600;margin-left: 20px;">
+                        <a href="<?= $base_url ?>/product/service-total">Dịch Vụ</a>
                     </p>
-                    
+
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" style="color: #212529;">Giới Thiệu</a>
