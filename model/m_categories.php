@@ -16,4 +16,8 @@
     function category_getSimilar(){
         return pdo_query("SELECT *FROM dichvu where MaLoaiDV = 1 ORDER BY rand() limit 4");
     }
+    function getbyId_category($id){
+        return pdo_query_one("SELECT * FROM danhmuc where MaDM = ?", $id);
+    }
+    
 ?>

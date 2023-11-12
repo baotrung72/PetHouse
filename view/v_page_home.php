@@ -114,7 +114,7 @@
                                     <p class="card-price d-n" style="font-size: 14px;">Giá: <strong><?= $sp['Gia'] ?>đ</strong></p>
                                 <?php endif; ?>
                                 <div class="btn-buy d-flex text-center">
-                                    <a href="<?=$base_url?>/product/detail&id=<?=$sp['MaSP']?>" class="btn btn-warning" style=" margin-left: 15px;">Chi
+                                    <a href="<?= $base_url ?>/product/detail&id=<?= $sp['MaSP'] ?>" class="btn btn-warning" style=" margin-left: 15px;">Chi
                                         Tiết</a>
                                     <a href="#" class="btn btn-warning" style=" margin-left: 50px;">Mua
                                         Ngay</a>
@@ -147,7 +147,7 @@
                                         <p class="card-price d-n" style="font-size: 14px;">Giá: <strong><?= $sp['Gia'] ?>đ</strong></p>
                                     <?php endif; ?>
                                     <div class="btn-buy d-flex text-center">
-                                        <a href="<?=$base_url?>/product/detail&id=<?=$sp['MaSP']?>" class="btn btn-warning" style=" margin-left: 15px;">Chi Tiết</a>
+                                        <a href="<?= $base_url ?>/product/detail&id=<?= $sp['MaSP'] ?>" class="btn btn-warning" style=" margin-left: 15px;">Chi Tiết</a>
                                         <a href="#" class="btn btn-warning" style=" margin-left: 50px;">Mua Ngay</a>
                                     </div>
                                 </div>
@@ -185,7 +185,7 @@
                                 <p class="card-price d-n" style="font-size: 14px;">Giá: <strong><?= $dv['Gia'] ?>đ</strong></p>
                             <?php endif; ?>
                             <div class="btn-buy d-flex text-center">
-                                <a href="<?=$base_url?>/category/detail&id=<?=$dv['MaDV']?>" class="btn btn-warning" style=" margin-left: 15px;">Chi
+                                <a href="<?= $base_url ?>/category/detail&id=<?= $dv['MaDV'] ?>" class="btn btn-warning" style=" margin-left: 15px;">Chi
                                     Tiết </a>
                                 <a href="#" class="btn btn-warning" style=" margin-left: 50px;">Đặt
                                     Ngay</a>
@@ -224,7 +224,7 @@
                                 <p class="card-price" style="font-size: 14px;">Giá: <strong><?= $sp['Gia'] ?>đ</strong></p>
                             <?php endif; ?>
                             <div class="btn-buy d-flex text-center">
-                                <a href="<?=$base_url?>/product/detail&id=<?=$sp['MaSP']?>" class="btn btn-warning" style=" margin-left: 15px;">Chi
+                                <a href="<?= $base_url ?>/product/detail&id=<?= $sp['MaSP'] ?>" class="btn btn-warning" style=" margin-left: 15px;">Chi
                                     Tiết </a>
                                 <a href="#" class="btn btn-warning" style=" margin-left: 50px;">Mua
                                     Ngay</a>
@@ -339,26 +339,26 @@
     </div>
 </section>
 <section>
-            <div class="brands  mt-5">
-                <div class="container text-center">
-                    <div class="row ">
-                        <div class="col">
-                            <img src="<?= $base_url ?>/template/assets_user/image/b1.webp" alt="">
-                        </div>
-                        <div class="col">
-                            <img src="<?= $base_url ?>/template/assets_user/image/b2.webp" alt="">
-                        </div>
-                        <div class="col">
-                            <img src="<?= $base_url ?>/template/assets_user/image/b3.webp" alt="">
-                        </div>
-                        <div class="col">
-                            <img src="<?= $base_url ?>/template/assets_user/image/b4.webp" alt="">
-                        </div>
-                        <div class="col">
-                            <img src="<?= $base_url ?>/template/assets_user/image/b5.webp" alt="">
-                        </div>
-
-                    </div>
+    <div class="brands  mt-5">
+        <div class="container text-center">
+            <div class="row ">
+                <div class="col">
+                    <img src="<?= $base_url ?>/template/assets_user/image/b1.webp" alt="">
                 </div>
+                <div class="col">
+                    <img src="<?= $base_url ?>/template/assets_user/image/b2.webp" alt="">
+                </div>
+                <div class="col">
+                    <img src="<?= $base_url ?>/template/assets_user/image/b3.webp" alt="">
+                </div>
+                <div class="col">
+                    <img src="<?= $base_url ?>/template/assets_user/image/b4.webp" alt="">
+                </div>
+                <div class="col">
+                    <img src="<?= $base_url ?>/template/assets_user/image/b5.webp" alt="">
+                </div>
+
             </div>
-        </section>
+        </div>
+    </div>
+</section>

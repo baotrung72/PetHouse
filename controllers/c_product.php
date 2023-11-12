@@ -4,13 +4,40 @@
 
 if (isset($_GET['act'])) {
     switch ($_GET['act']) {
+        case 'product-total':
+            //lấy dữ liệu từ model
+            include_once 'model/m_products.php';
+            include_once 'model/m_comment.php';
+            include_once 'model/m_categories.php';
+            
+            $dsdanhmuc = getAll_categoris(); //lấy ra danh mục
+
+            $newproducts = getThree_products(); // lấy ra các sp mới
+            $threeproducts = getThree2_products(); // lấy ra các sp mới
+            $getFashion = getFashion_Products(); // ;lấy sản phầm là thời trang
+
+            $dsServices = get_services(); // lấy ra các dịch vụ
+            $dsToolFoods = getToolFood_products(); // lấy ra thức ăn và đò dùng
+
+            // hiển thị dữ liệu ra view
+            $view_name = 'product_total';
+            break;
+        case 'service-total':
+            //lấy dữ liệu từ model
+            include_once 'model/m_products.php';
+            include_once 'model/m_comment.php';
+            $dsAllServices = getAll_service();
+
+            // hiển thị dữ liệu ra view
+            $view_name = 'service_total';
+            break;
         case 'detail':
             //lấy dữ liệu từ model
             include_once 'model/m_products.php';
             include_once 'model/m_comment.php';
-            $detailProduct = product_getById($_GET['id']);// lấy 1 sản phẩm theo id
+            $detailProduct = product_getById($_GET['id']); // lấy 1 sản phẩm theo id
             $productSimilar = product_getSimilar($detailProduct['MaDM']); // lấy sản phẩm tượng tự theo danh mục 
-            
+
             $dsComments = getStand_comments(); //lấy comment nổi bật
             // hiển thị dữ liệu ra view
             $view_name = 'product_details';
