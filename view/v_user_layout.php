@@ -49,7 +49,7 @@
                                                 <li><a class="dropdown-item active" href="#">Thông Tin</a></li>
                                                 <li><a class="dropdown-item" href="#">Lịch Sử</a></li>
                                                 <?php if ($_SESSION['user']['Quyen'] == 1) : ?>
-                                                    <li><a class="dropdown-item" href="#">Trang Quản Trị</a></li>
+                                                    <li><a class="dropdown-item" href="<?=$base_url?>/admin/dashboard">Trang Quản Trị</a></li>
                                                 <?php endif; ?>
                                                 <li>
                                                     <hr class="dropdown-divider">
