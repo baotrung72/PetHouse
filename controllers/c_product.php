@@ -49,6 +49,7 @@ if (isset($_GET['act'])) {
                 header("Location: ".$base_url."/product/search&keyword=".$_POST['keyword']);
             }
             $ketQuaTimKiem = product_search($_GET['keyword']);
+            
             // hiển thị dữ liệu ra view
             $view_name = 'product_search';
             break;
