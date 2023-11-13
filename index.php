@@ -19,6 +19,9 @@ if (isset($_GET['mod'])) {
         case 'category':
             $ctrl_name = 'category';
             break;
+        case 'admin':
+            $ctrl_name = 'admin';
+            break;
 
         default:
             # code...

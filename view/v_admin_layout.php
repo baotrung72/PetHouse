@@ -4,20 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="<?= $base_url ?>/template/assets_admin/css/admin.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js">
-    <title>Chỉnh Sửa Tài Khoản</title>
+    <title>Dashboard</title>
 </head>
 
 <body>
     <section id="header">
-        <a href="admin.html"><img src="image/logopethouse.png" class="logo" alt=""></a>
-        <span style="font-size: 16px;">Pet House </span>
+        <a href="admin.html"><img src="<?= $base_url ?>/template/assets_admin/image/logopethouse.png" class="logo" alt=""></a>
+        <span style="font-size: 16px;">PetHouse </span>
 
         <div>
             <ul id="navbar-contents">
@@ -29,23 +27,28 @@
         <div class="vertical-line"></div>
         <div id="user">
             <div class="btn-group">
-                <button type="button" class="btn dropdown-toggle end-0" style="outline: none; border: none;"
-                    data-bs-toggle="dropdown">
-                    <span>Phạm Hữu Ngọc Hà</span>
-                    <img src="image/avt.jpg" alt="">
+                <?php if (!isset($_SESSION['user'])) : ?>
+                    <a href="<?= $base_url ?>/user/login"><i class="fa-solid fa-user-tie" style="font-size: 24px; margin-right:10px;"></i></a>
+                <?php else : ?>
+                    <button class="btn dropdown-toggle border-0" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span><?= $_SESSION['user']['HoTen'] ?></span>
+                        <img src="<?= $base_url ?>/template/assets_user/image/<?= $_SESSION['user']['HinhAnh'] ?>" style="border-radius: 50%; object-fit:cover;" width="35px" height="35px" alt="">
 
-                </button>
-                <ul class="dropdown-menu" style="color: #212529;">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="#">Separated link</a></li>
-                </ul>
+                    </button>
+                    <ul class="dropdown-menu end-0" style="left:auto">
+                        <li><a class="dropdown-item active" href="#">Thông Tin</a></li>
+                        <li><a class="dropdown-item" href="#">Lịch Sử</a></li>
+                        <?php if ($_SESSION['user']['Quyen'] == 1) : ?>
+                            <li><a class="dropdown-item" href="<?= $base_url ?>/page/home">Trang Chủ</a></li>
+                        <?php endif; ?>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="<?= $base_url ?>/user/logout">Đăng Xuất</a></li>
+                    </ul>
+                <?php endif; ?>
             </div>
-            <!-- <img src="image/avt.jpg" alt="">
+            <!-- <img src="<?= $base_url ?>/template/assets_admin/image/avt.jpg" alt="">
             <div class="name">
                 <span>Phạm Hữu Ngọc Hà</span>
                 <p>admin</p>
@@ -57,21 +60,19 @@
         <div id="menu">
             <div class="menuno1 collapse collapse-horizontal show" id="openMenu">
                 <strong class=" d-block p-3 text-white" style="margin: 20px 30px;">Trang Quản Lý</strong>
-                <div class=" " style="background-color: #2e363f;">
-                    <div class="total-menu d-flex"
-                        style="background-color: #48525a;width: 300px; padding: 15px 0 15px 50px;">
+                <div class=" " style="<?= (strpos($view_name, 'dsahboard')) ? 'background-color: #2e363f;' : '' ?>">
+                    <div class="total-menu d-flex" style="background-color: #48525a;width: 300px; padding: 15px 0 15px 50px;">
                         <i class="fa-solid fa-gauge" style="font-size: 20px; margin-right: 20px;margin-top: 2px;"></i>
-                        <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                        <a href="<?=$base_url?>/admin/dashboard" class="list-group-item list-group-item-action active" aria-current="true">
                             Dashboard
                         </a>
                     </div>
 
                 </div>
-                <div class=" " style="background-color: #2e363f;">
+                <div class=" " style="<?= (strpos($view_name, 'user')) ? 'background-color: #2e363f;' : '' ?>" >
                     <div class="total-menu d-flex" style=" width: 300px; padding: 15px 0 15px 50px;">
-                        <i class="fa-solid fa-user-pen"
-                            style="font-size: 20px; margin-right: 20px;margin-top: 2px;"></i>
-                        <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                        <i class="fa-solid fa-user-pen" style="font-size: 20px; margin-right: 20px;margin-top: 2px;"></i>
+                        <a href="<?=$base_url?>/admin/user" class="list-group-item list-group-item-action active" aria-current="true">
                             Quản Lý Tài Khoản
                         </a>
                     </div>
@@ -79,9 +80,8 @@
                 </div>
                 <div class=" " style="background-color: #2e363f;">
                     <div class="total-menu d-flex" style="width: 300px; padding: 15px 0 15px 50px;">
-                        <i class="fa-solid fa-arrow-down-1-9"
-                            style="font-size: 20px; margin-right: 20px;margin-top: 2px;"></i>
-                        <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                        <i class="fa-solid fa-arrow-down-1-9" style="font-size: 20px; margin-right: 20px;margin-top: 2px;"></i>
+                        <a href="products.html" class="list-group-item list-group-item-action active" aria-current="true">
                             Quản Lý Sản Phẩm
                         </a>
                     </div>
@@ -89,9 +89,8 @@
                 </div>
                 <div class=" " style="background-color: #2e363f;">
                     <div class="total-menu d-flex" style="width: 300px; padding: 15px 0 15px 50px;">
-                        <i class="fa-solid fa-layer-group"
-                            style="font-size: 20px; margin-right: 20px;margin-top: 2px;"></i>
-                        <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                        <i class="fa-solid fa-layer-group" style="font-size: 20px; margin-right: 20px;margin-top: 2px;"></i>
+                        <a href="categories.html" class="list-group-item list-group-item-action active" aria-current="true">
                             Quản Lý Danh Mục
                         </a>
                     </div>
@@ -100,7 +99,7 @@
                 <div class=" " style="background-color: #2e363f;">
                     <div class="total-menu d-flex" style="width: 300px; padding: 15px 0 15px 50px;">
                         <i class="fa-solid fa-blog" style="font-size: 20px; margin-right: 20px;margin-top: 2px;"></i>
-                        <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                        <a href="post.html" class="list-group-item list-group-item-action active" aria-current="true">
                             Quản Lý Bài Viết
                         </a>
                     </div>
@@ -109,7 +108,7 @@
                 <div class=" " style="background-color: #2e363f;">
                     <div class="total-menu d-flex" style="width: 300px; padding: 15px 0 15px 50px;">
                         <i class="fa-solid fa-comment" style="font-size: 20px; margin-right: 20px;margin-top: 2px;"></i>
-                        <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                        <a href="comment.html" class="list-group-item list-group-item-action active" aria-current="true">
                             Quản Lý Bình Luận
                         </a>
                     </div>
@@ -117,9 +116,8 @@
                 </div>
                 <div class=" " style="background-color: #2e363f;">
                     <div class="total-menu d-flex" style="width: 300px; padding: 15px 0 15px 50px;">
-                        <i class="fa-solid fa-file-pen"
-                            style="font-size: 20px; margin-right: 20px;margin-top: 2px;"></i>
-                        <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                        <i class="fa-solid fa-file-pen" style="font-size: 20px; margin-right: 20px;margin-top: 2px;"></i>
+                        <a href="order.html" class="list-group-item list-group-item-action active" aria-current="true">
                             Quản Lý Đơn Hàng
                         </a>
                     </div>
@@ -133,42 +131,11 @@
                             Cài Đặt
                         </a>
                     </div>
-
                 </div>
             </div>
-
-
-
         </div>
-        <div class="form-p5">
-            <div class="main-user">
-                <div class="name-user">
-                    <div>
-                        <h2>Sửa Tài Khoản</h2>
-                        <p style="font-size: 14px;">Bạn có thể phân quyền truy cập cho mọi người khi bạn là admin</p>
-                    </div>
-                </div>
-                <div class="form-add d-block">
-                    <h4>Tạo Mới Thông Tin</h4>
-                    <form action="" method="post" enctype="multipart/form-data">
-                        <input type="text" name="Ten" placeholder="Tên Người Dùng"><br><br>
-                        <input type="email" name="Email" placeholder="Nhập email"><br><br>
-                        <input type="password" name="MatKhau" placeholder="Nhập Mật Khẩu"><br><br>
-                        <label>Ảnh Người Dùng:</label><br><br>
-                        <input type="file" name="anh" placeholder="Ảnh Người Dùng"><br><br>
-                        <select>
-                            <option>Cấp Quyền</option>
-                            <option>Admin</option>
-                            <option>Người Dùng</option>
-                        </select><br>
-                        <input style="background-color: #fcc850; color: white; " type="submit" value="Cập Nhật"
-                            name="submit">
-                    </form>
-                </div>
-
-
-            </div>
-
+        <main>
+            <?php include_once 'view/v_' . $view_name . '.php'; ?>
             <div class="footer">
                 <div class="mac">
                     <h4>HaphamEditor — TryHard by HTML CSS © 2021</h4>
@@ -177,7 +144,8 @@
                     <h4>Company PetHouse - CEO HaPham </h4>
                 </div>
             </div>
-        </div>
+            </div>
+        </main>
     </section>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
