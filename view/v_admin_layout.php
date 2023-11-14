@@ -81,7 +81,7 @@
                 <div class=" " style="background-color: #2e363f;">
                     <div class="total-menu d-flex" style="width: 300px; padding: 15px 0 15px 50px;">
                         <i class="fa-solid fa-arrow-down-1-9" style="font-size: 20px; margin-right: 20px;margin-top: 2px;"></i>
-                        <a href="products.html" class="list-group-item list-group-item-action active" aria-current="true">
+                        <a href="<?=$base_url?>/admin/product" class="list-group-item list-group-item-action active" aria-current="true">
                             Quản Lý Sản Phẩm
                         </a>
                     </div>

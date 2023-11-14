@@ -36,4 +36,21 @@
     function product_search($keyword){
         return pdo_query("SELECT * FROM sanpham WHERE TenSP LIKE '%$keyword%'");
     }
+    // admin
+    function getAll_productService($page = 1){
+        $batdau = ($page-1)*15;
+        return pdo_query("SELECT * FROM sanpham; UNION SELECT * FROM dichvu limit $batdau,15");
+    }
+    function product_countPage(){
+        return pdo_query("SELECT * FROM sanpham where MaSP");
+    }
+    function Product_addNew($MaDM, $TenSP, $Gia, $GiaKM, $Hinh, $MoTa, $NoiBat, $TrangThai, $hinhdang, $SoLuong){
+        return pdo_execute("INSERT INTO sanpham(`MaDM`,`TenSP`, `Gia`, `GiaKM`, `Hinh`, `MoTa`, `NoiBat`, `TrangThai`, `hinhdang`, `SoLuong`) VALUES (?,?,?,?,?,?,?,?,?,?)",$MaDM, $TenSP, $Gia, $GiaKM, $Hinh, $MoTa, $NoiBat, $TrangThai, $hinhdang, $SoLuong);
+    }
+    function product_getByMaSP($id){
+        return pdo_query_one("SELECT * FROM sanpham WHERE MaSP = ?", $id);
+    }
+    function product_edit($MaSP, $MaDM, $TenSP, $Gia, $GiaKM, $Hinh, $MoTa, $NoiBat, $TrangThai, $hinhdang, $SoLuong){
+        pdo_execute("UPDATE sanpham SET MaDM = ?,TenSP = ?,Gia = ?,GiaKM = ?,Hinh = ?,MoTa = ?, NoiBat = ?,TrangThai = ?,hinhdang = ?,SoLuong = ? WHERE MaSP = ?",$MaDM, $TenSP, $Gia, $GiaKM, $Hinh, $MoTa, $NoiBat, $TrangThai, $hinhdang, $SoLuong, $MaSP);
+    }
 ?>
