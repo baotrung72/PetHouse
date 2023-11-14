@@ -23,7 +23,7 @@
                     <div class="card-body">
                         <h5 class="card-title" style="height: 40px;"><?= $dv['TenDV'] ?></h5>
                         <?php if (isset($dv['GiaKM']) && $dv['GiaKM'] > 0) : ?>
-                            <p class="card-price" style="font-size: 14px;">Giá: <del><?= $dv['GiaKM'] ?>đ</del><strong><?= $dv['Gia'] ?>đ</strong></p>
+                            <p class="card-price" style="font-size: 14px;">Giá: <del><?= $dv['Gia'] ?>đ</del><strong><?= $dv['GiaKM'] ?>đ</strong></p>
                         <?php else : ?>
                             <p class="card-price d-n" style="font-size: 14px;">Giá: <strong><?= $dv['Gia'] ?>đ</strong></p>
                         <?php endif; ?>

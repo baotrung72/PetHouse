@@ -109,7 +109,7 @@
                                 <h5 class="card-title" style="height: 40px;"><?= $sp['TenSP'] ?></h5>
                                 <p class="card-text">Size: <strong><?= $sp['hinhdang'] ?></strong></p>
                                 <?php if (isset($sp['GiaKM']) && $sp['GiaKM'] > 0) : ?>
-                                    <p class="card-price" style="font-size: 14px;">Giá: <del><?= $sp['GiaKM'] ?>đ</del><strong><?= $sp['Gia'] ?>đ</strong></p>
+                                    <p class="card-price" style="font-size: 14px;">Giá: <del><?= $sp['Gia'] ?>đ</del><strong><?= $sp['GiaKM'] ?>đ</strong></p>
                                 <?php else : ?>
                                     <p class="card-price d-n" style="font-size: 14px;">Giá: <strong><?= $sp['Gia'] ?>đ</strong></p>
                                 <?php endif; ?>
@@ -142,7 +142,7 @@
                                     <h5 class="card-title" style="height: 40px;"><?= $sp['TenSP'] ?></h5>
                                     <p class="card-text">Size: <strong><?= $sp['hinhdang'] ?></strong></p>
                                     <?php if (isset($sp['GiaKM']) && $sp['GiaKM'] > 0) : ?>
-                                        <p class="card-price" style="font-size: 14px;">Giá: <del><?= $sp['GiaKM'] ?>đ</del><strong><?= $sp['Gia'] ?>đ</strong></p>
+                                        <p class="card-price" style="font-size: 14px;">Giá: <del><?= $sp['Gia'] ?>đ</del><strong><?= $sp['GiaKM'] ?>đ</strong></p>
                                     <?php else : ?>
                                         <p class="card-price d-n" style="font-size: 14px;">Giá: <strong><?= $sp['Gia'] ?>đ</strong></p>
                                     <?php endif; ?>
@@ -180,7 +180,7 @@
                             <h5 class="card-title" style="height: 40px;"><?= $dv['TenDV'] ?></h5>
                             <p class="card-text"><?= $dv['mota'] ?></p>
                             <?php if (isset($dv['GiaKM']) && $dv['GiaKM'] > 0) : ?>
-                                <p class="card-price" style="font-size: 14px;">Giá: <del><?= $dv['GiaKM'] ?>đ</del><strong><?= $dv['Gia'] ?>đ</strong></p>
+                                <p class="card-price" style="font-size: 14px;">Giá: <del><?= $dv['Gia'] ?>đ</del><strong><?= $dv['GiaKM'] ?>đ</strong></p>
                             <?php else : ?>
                                 <p class="card-price d-n" style="font-size: 14px;">Giá: <strong><?= $dv['Gia'] ?>đ</strong></p>
                             <?php endif; ?>
@@ -219,7 +219,7 @@
                             <p class="card-text " style="font-size: 14px;">Size: <strong><?= $sp['hinhdang'] ?></strong></p>
 
                             <?php if (isset($sp['GiaKM']) && $sp['GiaKM'] > 0) : ?>
-                                <p class="card-price" style="font-size: 14px;">Giá: <del><?= $sp['GiaKM'] ?>đ</del><strong><?= $sp['Gia'] ?>đ</strong></p>
+                                <p class="card-price" style="font-size: 14px;">Giá: <del><?= $sp['Gia'] ?>đ</del><strong><?= $sp['GiaKM'] ?>đ</strong></p>
                             <?php else : ?>
                                 <p class="card-price" style="font-size: 14px;">Giá: <strong><?= $sp['Gia'] ?>đ</strong></p>
                             <?php endif; ?>
