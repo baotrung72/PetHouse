@@ -24,7 +24,18 @@
                 // hiển thị dữ liệu ra view
                 $view_name = 'page_home';
                 break;
-            
+            case 'contact':
+                
+                $view_name = 'page_contact';
+                break;
+            case 'about':
+                
+                $view_name = 'page_about';
+                break;
+            case 'posts':
+                
+                $view_name = 'page_post';
+                break;
             default:
                 # code...
                 break;

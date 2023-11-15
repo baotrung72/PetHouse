@@ -31,24 +31,24 @@
             <div class="form-p3">
                 <div class="note2">
                     <h3>
-                        Active users
+                        Khách hàng hoạt động
                     </h3>
                     <div class="color-note">
-                        <h2>148</h2>
+                        <h2 style="margin-left: 36px;"><?=$countUsers?></h2>
                     </div>
                     <div class="span">
                         <div class="active">
-                            <span>Active pages</span>
-                            <p>/products/brandix-z4</p>
-                            <p>/categories/drivetrain</p>
-                            <p>/categories/monitors</p>
-                            <p>/account/orders</p>
+                            <span>Trang đang hoạt động</span>
+                            <p>/page/home</p>
+                            <p>/product/category</p>
+                            <p>/product/details</p>
                             <p>/cart</p>
-                            <p>/checkout</p>
-                            <p>/pages/about-us</p>
+                            <p>/payment</p>
+                            <p>/post</p>
+                            <p>/contact</p>
                         </div>
                         <div class="user">
-                            <span>Users</span>
+                            <span>Khách hàng</span>
                             <p>12</p>
                             <p>11</p>
                             <p>9</p>

@@ -27,5 +27,8 @@
     function user_delete($MaKH){
         pdo_execute("DELETE FROM khachhang WHERE MaKH = ?", $MaKH);
     }
+    function user_countStatus(){
+        return pdo_query_value("SELECT count(*) from khachhang WHERE TrangThai = 1");
+    }
 
 ?>

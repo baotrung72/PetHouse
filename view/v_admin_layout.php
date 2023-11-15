@@ -90,7 +90,7 @@
                 <div class=" " style="background-color: #2e363f;">
                     <div class="total-menu d-flex" style="width: 300px; padding: 15px 0 15px 50px;">
                         <i class="fa-solid fa-layer-group" style="font-size: 20px; margin-right: 20px;margin-top: 2px;"></i>
-                        <a href="categories.html" class="list-group-item list-group-item-action active" aria-current="true">
+                        <a href="<?=$base_url?>/admin/categories" class="list-group-item list-group-item-action active" aria-current="true">
                             Quản Lý Danh Mục
                         </a>
                     </div>
@@ -99,7 +99,7 @@
                 <div class=" " style="background-color: #2e363f;">
                     <div class="total-menu d-flex" style="width: 300px; padding: 15px 0 15px 50px;">
                         <i class="fa-solid fa-blog" style="font-size: 20px; margin-right: 20px;margin-top: 2px;"></i>
-                        <a href="post.html" class="list-group-item list-group-item-action active" aria-current="true">
+                        <a href="<?=$base_url?>/admin/post" class="list-group-item list-group-item-action active" aria-current="true">
                             Quản Lý Bài Viết
                         </a>
                     </div>
@@ -108,7 +108,7 @@
                 <div class=" " style="background-color: #2e363f;">
                     <div class="total-menu d-flex" style="width: 300px; padding: 15px 0 15px 50px;">
                         <i class="fa-solid fa-comment" style="font-size: 20px; margin-right: 20px;margin-top: 2px;"></i>
-                        <a href="comment.html" class="list-group-item list-group-item-action active" aria-current="true">
+                        <a href="<?=$base_url?>/admin/comment" class="list-group-item list-group-item-action active" aria-current="true">
                             Quản Lý Bình Luận
                         </a>
                     </div>

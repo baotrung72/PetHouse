@@ -57,7 +57,7 @@
                                     <span style="padding: 5px 12px; color: #ffffff; height: 30px; border-radius: 5px;" class="bg-success">User</span>
                                 <?php endif; ?>
                             </td>
-                            <td style="font-size: 16px;"><button style="border:none"; onclick="UserDelete(<?=$kh['MaKH']?>)"><i class="fa-solid fa-trash-can"></i></button> &nbsp;<a href="<?= $base_url ?>/admin/user-edit&id=<?= $kh['MaKH'] ?>"><i class="fa-solid fa-pen"></i></a></td>
+                            <td style="font-size: 16px;"><button style="border:none;" onclick="UserDelete(<?=$kh['MaKH']?>)"><i class="fa-solid fa-trash-can"></i></button> &nbsp;<a href="<?= $base_url ?>/admin/user-edit&id=<?= $kh['MaKH'] ?>"><i class="fa-solid fa-pen"></i></a></td>
                         </tr>
                     <?php $i++;
                     endforeach; ?>

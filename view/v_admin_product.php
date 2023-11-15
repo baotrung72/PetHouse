@@ -3,18 +3,18 @@
         <div class="name-user">
             <h2>Sản Phẩm</h2>
             <div class="user-btn">
-                <a href="<?=$base_url?>/admin/product-add"><button><i class="fa-solid fa-plus"></i> &nbsp; Thêm Mới</button></a>
+                <a href="<?= $base_url ?>/admin/product-add"><button><i class="fa-solid fa-plus"></i> &nbsp; Thêm Mới</button></a>
             </div>
         </div>
-
         <h4>Danh Sách Sản Phẩm</h4>
         <?php if (isset($_SESSION['success'])) : ?>
             <div class="alert alert-success" role="alert">
                 <?= $_SESSION['success'] ?>
             </div>
-            <?php endif; unset($_SESSION['success']);?>
-            <hr class="line1">
-            <div class="table-product">
+        <?php endif;
+        unset($_SESSION['success']); ?>
+        <hr class="line1">
+        <div class="table-product">
             <table width="100%">
                 <thead border="1">
 
@@ -49,16 +49,20 @@
                                     <span>Ẩn</span>
                                 <?php endif; ?>
                             </td>
-                            <td style="font-size: 16px;"><a href="#"><a href="<?= $base_url ?>/admin/product-edit&id=<?= $sp['MaSP'] ?>"><i class="fa-solid fa-pen"></i></a> <i class="fa-solid fa-trash-can"></i></a> &nbsp;</td>
+                            <td style="font-size: 16px;"><a href="<?= $base_url ?>/admin/product-edit&id=<?= $sp['MaSP'] ?>"><i class="fa-solid fa-pen"></i></a><button style="border:none; margin-left: 10px;" onclick="productDelete(<?= $sp['MaSP'] ?>)"> <i class="fa-solid fa-trash-can"></i></button> &nbsp;</td>
                         </tr>
                     <?php $i++;
                     endforeach; ?>
-
                 </tbody>
             </table>
         </div>
-
     </div>
-
-
 </div>
+<script>
+    function productDelete(MaSP) {
+        var userConfirm = confirm('Bạn có chắc muốn xóa sản phẩm này không!');
+        if (userConfirm) {
+            window.location = '<?= $base_url ?>/admin/product-delete&id=' + MaSP;
+        }
+    }
+</script>

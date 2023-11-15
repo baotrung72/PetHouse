@@ -53,4 +53,8 @@
     function product_edit($MaSP, $MaDM, $TenSP, $Gia, $GiaKM, $Hinh, $MoTa, $NoiBat, $TrangThai, $hinhdang, $SoLuong){
         pdo_execute("UPDATE sanpham SET MaDM = ?,TenSP = ?,Gia = ?,GiaKM = ?,Hinh = ?,MoTa = ?, NoiBat = ?,TrangThai = ?,hinhdang = ?,SoLuong = ? WHERE MaSP = ?",$MaDM, $TenSP, $Gia, $GiaKM, $Hinh, $MoTa, $NoiBat, $TrangThai, $hinhdang, $SoLuong, $MaSP);
     }
+    function product_delete($id){
+        pdo_execute("DELETE FROM sanpham where MaSP = ?",$id);
+
+    }
 ?>
