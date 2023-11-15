@@ -38,7 +38,7 @@ if (isset($_GET['act'])) {
             $detailProduct = product_getById($_GET['id']); // lấy 1 sản phẩm theo id
             $productSimilar = product_getSimilar($detailProduct['MaDM']); // lấy sản phẩm tượng tự theo danh mục 
 
-            $dsComments = getStand_comments(); //lấy comment nổi bật
+            $dsComments = get_cmtByProduct($_GET['id']); //lấy comment nổi bật
             // hiển thị dữ liệu ra view
             $view_name = 'product_details';
             break;
@@ -52,6 +52,15 @@ if (isset($_GET['act'])) {
             
             // hiển thị dữ liệu ra view
             $view_name = 'product_search';
+            break;
+        case 'comment':
+            //lấy dữ liệu từ model
+            include_once 'model/m_comment.php';
+            include_once 'model/m_products.php';
+            comment_add($_SESSION['user']['MaKH'], $_POST['MaSP'], $_POST['NoiDung']);
+            header("Location: ".$base_url."/product/detail&id=".$_POST['MaSP']."");
+
+            
             break;
         default:
             # code...
