@@ -19,5 +19,18 @@
     function getbyId_category($id){
         return pdo_query_one("SELECT * FROM danhmuc where MaDM = ?", $id);
     }
+    // admin
+    function categories_addNew($TenDM, $ThuTu, $TrangThai, $Hinhanh){
+        return pdo_execute("INSERT INTO danhmuc(`TenDM`,`ThuTu`,`TrangThai`,`Hinhanh`) values (?,?,?,?)",$TenDM,$ThuTu,$TrangThai, $Hinhanh);
+    }
+    function categories_checkName($TenDM){
+        return pdo_query("SELECT * FROM danhmuc where TenDM = ?",$TenDM);
+    }
+    function categories_edit($MaDM, $TenDM, $ThuTu, $TrangThai){
+        pdo_execute("UPDATE danhmuc SET TenDM = ?, ThuTu = ?, TrangThai = ? WHERE MaDM = ?",  $TenDM, $ThuTu,$TrangThai, $MaDM);
+    }
+    function categories_delete($MaDM){
+        pdo_execute("DELETE FROM danhmuc WHERE MaDM = ?", $MaDM);
+    }
     
 ?>

@@ -88,13 +88,13 @@
 
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" style="color: #212529;">Giới Thiệu</a>
+                    <a class="nav-link" href="<?=$base_url?>/page/about" style="color: #212529;">Giới Thiệu</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" style="color: #212529;">Tin Tức</a>
+                    <a class="nav-link" href="<?=$base_url?>/page/post" style="color: #212529;">Bài Viết</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" style="color: #212529;">Liên Hệ</a>
+                    <a class="nav-link" href="<?=$base_url?>/page/contact" style="color: #212529;">Liên Hệ</a>
                 </li>
 
             </ul>
