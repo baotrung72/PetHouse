@@ -3,7 +3,7 @@
         <div class="name-user">
             <h2>Danh Mục</h2>
             <div class="user-btn">
-                <a href="<?= $base_url ?>/admin/categories_add"><button><i class="fa-solid fa-plus"></i> &nbsp; Thêm Mới</button></a>
+                <a href="<?= $base_url ?>/admin/categories-add"><button><i class="fa-solid fa-plus"></i> &nbsp; Thêm Mới</button></a>
             </div>
         </div>
 
@@ -38,7 +38,7 @@
 
                             <?php endif; ?>
                             </td>
-                            <td><button style="border:none" ; onclick="CategoriesDelete(<?= $dm['MaDM'] ?>)"><i class="fa-solid fa-trash-can"></i></button> &nbsp;<a href="<?= $base_url ?>/admin/categories_edit&id=<?= $dm['MaDM'] ?>"><i class="fa-solid fa-pen"></i></a></td>
+                            <td><button style="border:none" ; onclick="CategoriesDelete(<?= $dm['MaDM'] ?>)"><i class="fa-solid fa-trash-can"></i></button> &nbsp;<a href="<?= $base_url ?>/admin/categories-edit&id=<?= $dm['MaDM'] ?>"><i class="fa-solid fa-pen"></i></a></td>
                         </tr>
                     <?php $i++;
                     endforeach; ?>

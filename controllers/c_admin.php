@@ -269,7 +269,7 @@ if (isset($_GET['act'])) {
                 //hiển thị dữ liệu 
                 $view_name = 'admin_categories';
                 break;
-        case 'categories_add':
+        case 'categories-add':
                 include_once 'model/m_categories.php';
                 if (isset($_POST['submit'])) {
                     // Lấy giá trị từ form
@@ -306,7 +306,7 @@ if (isset($_GET['act'])) {
                 //hiển thị dữ liệu
                 $view_name = 'admin_categories_add';
                 break;
-        case 'categories_edit':
+        case 'categories-edit':
                 include_once 'model/m_categories.php';
                 $MaDM = $_GET['id'];
                 $dm = getbyId_category($MaDM);

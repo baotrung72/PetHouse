@@ -3,7 +3,7 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item" style="text-decoration: none; color: #212529;"><a href="<?= $base_url ?>/page/home">Trang Chủ</a>
             </li>
-            <li class="breadcrumb-item" style="text-decoration: none; color: #212529;"><a href="#">Sản Phẩm</a></li>
+            <li class="breadcrumb-item" style="text-decoration: none; color: #212529;"><a href="<?= $base_url ?>/page/product-total">Sản Phẩm</a></li>
             <li class="breadcrumb-item" style="text-decoration: none; color: #212529;">Chi Tiết</li>
         </ol>
     </nav>
@@ -71,13 +71,19 @@
         </div>
         <div style="padding-top: 30px; max-width: 500px;">
             <h5>Viết Đánh Giá</h5>
-            <div class="input-group mb-3 mt-3 " style="padding-left: 30px;">
-                <input type="text" class="form-control" placeholder="Viết Đánh Giá" aria-label="Recipient's username" aria-describedby="button-addon2">
-                <button class="btn btn-warning" type="button" id="button-addon2">Gửi</button>
-            </div>
+            <?php if (isset($_SESSION['user'])) : ?>
+                <form action="<?= $base_url ?>/product/comment" method="post">
+                    <div class="input-group mb-3 mt-3 " style="padding-left: 30px;">
+                        <input type="text" class="form-control" name="NoiDung" placeholder="Viết Đánh Giá" aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <input type="hidden" class="form-control" name="MaSP" value="<?= $detailProduct['MaSP'] ?>" placeholder="Viết Đánh Giá" aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <button class="btn btn-warning" type="submit" name="submit" id="button-addon2">Gửi</button>
+                    </div>
+                </form>
+            <?php endif; ?>
+
         </div>
         <h2 style="padding-top: 50px;" class="text-warning">Một Số Đánh Giá</h2>
-        <div class="row" style="padding-top: 50px;">
+        <div class="row" style="padding-top: 50px;"> 
             <div class="col-12">
                 <?php foreach ($dsComments as $cmt) : ?>
                     <div class="d-flex" style=" max-width: 500px;">
