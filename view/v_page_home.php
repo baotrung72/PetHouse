@@ -7,13 +7,13 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="<?= $base_url ?>/template/assets_user/image/banner1.jpg" class="d-block w-100" alt="..." style="height: 560px;">
+                <img src="<?= $base_url ?>/template/assets_user/image/banner3.jpg" class="d-block w-100" alt="..." style="height: 560px;">
             </div>
             <div class="carousel-item">
                 <img src="<?= $base_url ?>/template/assets_user/image/banner2.jpg" class="d-block w-100" alt="..." style="height: 560px;">
             </div>
             <div class="carousel-item">
-                <img src="<?= $base_url ?>/template/assets_user/image/banner3.jpg" class="d-block w-100" alt="..." style="height: 560px;">
+                <img src="<?= $base_url ?>/template/assets_user/image/banner1.jpg" class="d-block w-100" alt="..." style="height: 560px;">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -331,7 +331,7 @@
                     </div>
                 <?php endforeach; ?>
                 <div class="text-center mt-3">
-                    <button type="button" class="btn btn-warning text-center"><a href="#" style="color: #212529; text-decoration: none;">Xem Thêm</a></button>
+                    <button type="button" class="btn btn-warning text-center"><a href="<?=$base_url?>/news/news" style="color: #212529; text-decoration: none;">Xem Thêm</a></button>
 
                 </div>
             </div>

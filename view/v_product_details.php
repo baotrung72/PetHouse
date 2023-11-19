@@ -7,63 +7,70 @@
             <li class="breadcrumb-item" style="text-decoration: none; color: #212529;">Chi Tiết</li>
         </ol>
     </nav>
+
     <div class="container">
-        <div class="row">
-            <div class="col">
-                <img src="<?= $base_url ?>/template/assets_user/image/<?= $detailProduct['Hinh'] ?>" alt="" style="height: 500px; width: 100%; object-fit: cover;">
-                <div class="row" style="padding-top: 50px;">
-                    <div class="col">
-                        <img src="<?= $base_url ?>/template/assets_user/image/<?= $detailProduct['Hinh'] ?>" alt="" width="190px">
+        <form action="<?=$base_url?>/page/cart" method="post">
+            <input type="hidden" name="Gia" id="Gia">
+            <input type="hidden" name="SoLuong" id="SoLuong">
+            <div class="row">
+                <div class="col">
+                    <img src="<?= $base_url ?>/template/assets_user/image/<?= $detailProduct['Hinh'] ?>" alt="" style="height: 500px; width: 100%; object-fit: cover;">
+                    <div class="row" style="padding-top: 50px;">
+                        <div class="col">
+                            <img src="<?= $base_url ?>/template/assets_user/image/<?= $detailProduct['Hinh'] ?>" alt="" width="190px">
+                        </div>
+                        <div class="col">
+                            <img src="<?= $base_url ?>/template/assets_user/image/<?= $detailProduct['Hinh'] ?>" alt="" width="190px">
+                        </div>
+                        <div class="col">
+                            <img src="<?= $base_url ?>/template/assets_user/image/<?= $detailProduct['Hinh'] ?>" alt="" width="190px">
+                        </div>
                     </div>
-                    <div class="col">
-                        <img src="<?= $base_url ?>/template/assets_user/image/<?= $detailProduct['Hinh'] ?>" alt="" width="190px">
+
+                </div>
+                <div class="col">
+                    <h3><?= $detailProduct['TenSP'] ?></h3> <br>
+                    <p><?= $detailProduct['MoTa'] ?></p>
+
+                    <h3 style="padding-top: 50px;">Giá: <span class="text-danger"><?= $detailProduct['Gia'] ?>đ</span></h3>
+
+                    <h5 style="padding-top: 30px;">Size: <strong><?= $detailProduct['hinhdang'] ?></strong></h5>
+                    <div class="quantity d-flex pt-5">
+                        <h5 style="margin-right: 20px; padding-top: 5px;">Số Lượng:</h5>
+                        <div class="btn-group me-1 text-center" role="group" aria-label="Second group" style="font-size: 12px;width:30px; ">
+                            <button type="button" class="btn btn-secondary" id="subtractquantity">-</button>
+                            <div style="width: 50px; ">
+                            <input type="number" name="SoLuong" value="1" min="1" style="width: 50px; text-align:center;height: 40px;font-size:16px;">
+                            </div>
+                            <button type="button" class="btn btn-secondary" id="add">+</button>
+                        </div>
                     </div>
-                    <div class="col">
-                        <img src="<?= $base_url ?>/template/assets_user/image/<?= $detailProduct['Hinh'] ?>" alt="" width="190px">
+                    <div style="padding-top: 70px;">
+                        <a href="<?= $base_url ?>/page/addToCart&id=<?= $detailProduct['MaSP'] ?>" type="submit" class="btn btn-warning">Thêm Vào Giỏ Hàng</a>
+                    </div>
+                    <div style="padding-top: 50px; width: 200px;">
+                        <h5>Tham Khảo Thêm Tại:</h5>
+                        <div class="row mt-4">
+                            <div class="col">
+                                <a href="#" style="text-decoration: none; color: blue;"><i class="fa-brands fa-twitter"></i></a>
+                            </div>
+                            <div class="col">
+                                <a href="#" style="text-decoration: none; color: blue;"><i class="fa-brands fa-facebook"></i></i></a>
+                            </div>
+                            <div class="col">
+                                <a href="#" style="text-decoration: none; color: orangered;"><i class="fa-brands fa-instagram"></i></a>
+                            </div>
+                            <div class="col">
+                                <a href="#" style="text-decoration: none; color: red;"><i class="fa-brands fa-youtube"></i></a>
+                            </div>
+                            <div class="col">
+                                <a href="#" style="text-decoration: none; color: #212529;"><i class="fa-solid fa-wifi"></i></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
             </div>
-            <div class="col">
-                <h3><?= $detailProduct['TenSP'] ?></h3> <br>
-                <p><?= $detailProduct['MoTa'] ?></p>
-
-                <h3 style="padding-top: 50px;">Giá: <span class="text-danger"><?= $detailProduct['Gia'] ?>đ</span></h3>
-
-                <h5 style="padding-top: 30px;">Size: <strong><?= $detailProduct['hinhdang'] ?></strong></h5>
-                <div class="quantity d-flex pt-5">
-                    <h5 style="margin-right: 20px; padding-top: 5px;">Số Lượng:</h5>
-                    <div class="btn-group me-1 text-center" role="group" aria-label="Second group" style="font-size: 12px; ">
-                        <button type="button" class="btn btn-secondary" id="subtractquantity">-</button>
-                        <button type="button" class="btn btn" id="quantity">1</button>
-                        <button type="button" class="btn btn-secondary" id="add">+</button>
-                    </div>
-                </div>
-                <div style="padding-top: 70px;">
-                    <button type="button" class="btn btn-warning">Thêm Vào Giỏ Hàng</button>
-                </div>
-                <div style="padding-top: 50px; width: 200px;">
-                    <h5>Tham Khảo Thêm Tại:</h5>
-                    <div class="row mt-4">
-                        <div class="col">
-                            <a href="#" style="text-decoration: none; color: blue;"><i class="fa-brands fa-twitter"></i></a>
-                        </div>
-                        <div class="col">
-                            <a href="#" style="text-decoration: none; color: blue;"><i class="fa-brands fa-facebook"></i></i></a>
-                        </div>
-                        <div class="col">
-                            <a href="#" style="text-decoration: none; color: orangered;"><i class="fa-brands fa-instagram"></i></a>
-                        </div>
-                        <div class="col">
-                            <a href="#" style="text-decoration: none; color: red;"><i class="fa-brands fa-youtube"></i></a>
-                        </div>
-                        <div class="col">
-                            <a href="#" style="text-decoration: none; color: #212529;"><i class="fa-solid fa-wifi"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </form>
         <div style="padding: 50px;">
             <h5 class="pb-3">Thông Tin Chi Tiết</h5>
             <p style="padding-left: 30px;  line-height: 1.45rem;">- PetHouse là điểm đến lý tưởng cho những người yêu thú cưng, nơi cung cấp một trải nghiệm mua sắm trực tuyến toàn diện và chất lượng. Với sự đa dạng của các sản phẩm từ thức ăn dinh dưỡng đến đồ chơi và thời trang thú cưng, PetHouse cam kết mang đến cho khách hàng không chỉ là sự thuận tiện mua sắm mà còn là trải nghiệm chăm sóc toàn diện cho thú cưng yêu quý của họ. Đội ngũ tư vấn viên chăm sóc khách hàng của chúng tôi sẵn sàng hỗ trợ bạn với mọi thắc mắc và đảm bảo bạn nhận được những sản phẩm và dịch vụ tốt nhất cho thú cưng của mình. PetHouse không chỉ là nơi để mua sắm, mà còn là cộng đồng đam mê thú cưng, nơi mà bạn có thể chia sẻ kinh nghiệm và kiến thức về việc chăm sóc thú cưng. Hãy thăm PetHouse ngay hôm nay và khám phá thế giới thú cưng đầy màu sắc cùng những trải nghiệm mới lạ!</p>
@@ -83,7 +90,7 @@
 
         </div>
         <h2 style="padding-top: 50px;" class="text-warning">Một Số Đánh Giá</h2>
-        <div class="row" style="padding-top: 50px;"> 
+        <div class="row" style="padding-top: 50px;">
             <div class="col-12">
                 <?php foreach ($dsComments as $cmt) : ?>
                     <div class="d-flex" style=" max-width: 500px;">

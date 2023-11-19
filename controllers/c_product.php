@@ -9,7 +9,7 @@ if (isset($_GET['act'])) {
             include_once 'model/m_products.php';
             include_once 'model/m_comment.php';
             include_once 'model/m_categories.php';
-            
+
             $dsdanhmuc = getAll_categoris(); //lấy ra danh mục
 
             $newproducts = getThree_products(); // lấy ra các sp mới
@@ -45,11 +45,11 @@ if (isset($_GET['act'])) {
         case 'search':
             //lấy dữ liệu từ model
             include_once 'model/m_products.php';
-            if(isset($_POST['keyword'])){
-                header("Location: ".$base_url."/product/search&keyword=".$_POST['keyword']);
+            if (isset($_POST['keyword'])) {
+                header("Location: " . $base_url . "/product/search&keyword=" . $_POST['keyword']);
             }
             $ketQuaTimKiem = product_search($_GET['keyword']);
-            
+
             // hiển thị dữ liệu ra view
             $view_name = 'product_search';
             break;
@@ -58,10 +58,11 @@ if (isset($_GET['act'])) {
             include_once 'model/m_comment.php';
             include_once 'model/m_products.php';
             comment_add($_SESSION['user']['MaKH'], $_POST['MaSP'], $_POST['NoiDung']);
-            header("Location: ".$base_url."/product/detail&id=".$_POST['MaSP']."");
-
-            
+            header("Location: " . $base_url . "/product/detail&id=" . $_POST['MaSP'] . "");
             break;
+        
+
+
         default:
             # code...
             break;
