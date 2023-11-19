@@ -7,3 +7,4 @@ RewriteRule ^(.*)/(.*)$ index.php?mod=$1&act=$2 [L]
 
 RewriteRule ^product/detail/(.*)$ index.php?mod=product&act=detail&id=$1 [L]
 RewriteRule ^(.*)/search&keyword=(.*)$ index.php?mod=$1&act=search&keyword=$2 [L]
+RewriteRule ^admin/product/(.*)$ index.php?mod=admin&act=product&page=$1 [L]

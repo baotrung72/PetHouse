@@ -31,4 +31,13 @@
         return pdo_query_value("SELECT count(*) from khachhang WHERE TrangThai = 1");
     }
 
+    // trang cá nhân
+    function getUser_ById($MaKH){
+        return pdo_query_one("SELECT * FROM khachhang WHERE MaKH = ?",$MaKH);
+    }
+    function user_edit_personal($MaKH, $HoTen, $Email, $MatKhau, $SoDienThoai, $DiaChi){
+        pdo_execute("UPDATE khachhang SET HoTen = ?, Email = ?, MatKhau = ?, SoDienThoai = ?, DiaChi = ? WHERE MaKH = ?",  $HoTen, $Email, $MatKhau, $SoDienThoai, $DiaChi, $MaKH );
+    }
+?>
+
 ?>

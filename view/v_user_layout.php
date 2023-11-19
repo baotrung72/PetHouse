@@ -8,6 +8,7 @@
     <link rel="icon" href="<?= $base_url ?>/path/to/favicon.ico" type="image/x-icon">
     <link rel="icon" type="image/png" href="<?= $base_url ?>/template/assets_user/image/logo.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,21 +19,21 @@
 <body>
     <header>
         <div class="container-header">
-            <nav class="navbar navbar-expand-lg p-0">
-                <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg p-0" style="background-color: #f1b306;">
+                <div class="container-fluid" style=" color: #ffffff;">
                     <a class="navbar-brand " href="<?= $base_url ?>/page/home"><img src="<?= $base_url ?>/template/assets_user/image/logo.png" alt="" class="w-25 h-25"></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <form class="d-flex " role="search" style="width: 450px; " method="post" action="<?= $base_url ?>/product/search">
-                            <input class="form-control w-100" name="keyword" style="border-top-left-radius: 20px;border-bottom-left-radius: 20px;border-top-right-radius: 0px; border-bottom-right-radius: 0px; border: 1.5px solid #fcb000;" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit" name="submit" style="border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-top-left-radius: 0;border-bottom-left-radius: 0; border: 1.5px solid #fcb000;" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                            <input class="form-control w-100" name="keyword" style=" border: 1.5px solid gray; border-top-left-radius: 20px;border-bottom-left-radius: 20px;border-top-right-radius: 0px; border-bottom-right-radius: 0px; " type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn " type="submit" name="submit" style=" background-color: #ffffff;border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-top-left-radius: 0;border-bottom-left-radius: 0; border: 1.5px solid gray;" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                         </form>
                     </div>
                     <nav class="navbar navbar-expand-lg ">
                         <div class="container-fluid">
-                            <a class="navbar-brand" href="#"><i class="fa-solid fa-cart-shopping" style="font-size: 24px;"></i></a>
+                            <a class="navbar-brand" href="<?= $base_url ?>/page/cart"><i class="fa-solid fa-cart-shopping" style="font-size: 24px;"></i></a>
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
@@ -46,10 +47,10 @@
                                                 <img src="<?= $base_url ?>/template/assets_user/image/<?= $_SESSION['user']['HinhAnh'] ?>" style="border-radius: 50%; object-fit:cover;" width="35px" height="35px" alt="">
                                             </button>
                                             <ul class="dropdown-menu end-0" style="left:auto">
-                                                <li><a class="dropdown-item active" href="#">Thông Tin</a></li>
+                                                <li><a class="dropdown-item active" href="<?= $base_url ?>/user/personal">Thông Tin</a></li>
                                                 <li><a class="dropdown-item" href="#">Lịch Sử</a></li>
                                                 <?php if ($_SESSION['user']['Quyen'] == 1) : ?>
-                                                    <li><a class="dropdown-item" href="<?=$base_url?>/admin/dashboard">Trang Quản Trị</a></li>
+                                                    <li><a class="dropdown-item" href="<?= $base_url ?>/admin/dashboard">Trang Quản Trị</a></li>
                                                 <?php endif; ?>
                                                 <li>
                                                     <hr class="dropdown-divider">
@@ -66,12 +67,12 @@
                     </nav>
                 </div>
             </nav>
-            <ul class="nav nav-underline justify-content-center h-90 p-sm-2" style="background-color: #fcb000; font-size: 20px; font-weight: 600;">
+            <ul class="nav nav-underline justify-content-center h-90 p-sm-2" style="background-color:  #603813; font-size: 20px; font-weight: 600; color: #ffffff;">
                 <li class="nav-item">
-                    <a class="nav-link active " aria-current="page" href="<?= $base_url ?>/page/home" style="color: #212529;">Trang Chủ</a>
+                    <a class="nav-link active " aria-current="page" href="<?= $base_url ?>/page/home" style="color: #ffffff;">Trang Chủ</a>
                 </li>
                 <li class="nav-item dropdown pt-2 d-flex">
-                    <a href="<?= $base_url ?>/product/product-total">Sản Phẩm</a>
+                    <a href="<?= $base_url ?>/product/product-total" style=" color: #ffffff;">Sản Phẩm</a>
                     <p class="  dropdown-toggle" data-bs-toggle="dropdown" style=" font-size: 20px; font-weight: 600;" aria-expanded="false">
                     </p>
                     <ul class="dropdown-menu dropdown-menu">
@@ -83,18 +84,18 @@
                 </li>
                 <li class="nav-item pt-2 ">
                     <p class=" " style=" font-size: 20px; font-weight: 600;margin-left: 20px;">
-                        <a href="<?= $base_url ?>/product/service-total">Dịch Vụ</a>
+                        <a href="<?= $base_url ?>/product/service-total" style=" color: #ffffff;">Dịch Vụ</a>
                     </p>
 
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?=$base_url?>/page/about" style="color: #212529;">Giới Thiệu</a>
+                    <a class="nav-link" href="<?= $base_url ?>/page/about" style="color: #ffffff; ">Giới Thiệu</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?=$base_url?>/page/post" style="color: #212529;">Bài Viết</a>
+                    <a class="nav-link" href="<?= $base_url ?>/news/news" style="color: #ffffff;">Bài Viết</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?=$base_url?>/page/contact" style="color: #212529;">Liên Hệ</a>
+                    <a class="nav-link" href="<?= $base_url ?>/page/contact" style="color: #ffffff;">Liên Hệ</a>
                 </li>
 
             </ul>
@@ -191,23 +192,8 @@
 <script src="<?= $base_url ?>/template/assets_user/javascript/index.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
-    (function() {
-        'use strict';
-
-        var forms = document.querySelectorAll('.needs-validation');
-
-        Array.from(forms).forEach(function(form) {
-            form.addEventListener('submit', function(event) {
-                if (!form.checkValidity()) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                }
-
-                form.classList.add('was-validated');
-            });
-        });
-    })();
 </script>
 
 </html>

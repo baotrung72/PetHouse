@@ -69,12 +69,7 @@ if (isset($_GET['act'])) {
             include_once 'model/m_products.php';
             //lay du lieu
             $ListProduct = getAll_productService();
-            // $page = 1;
-            // if(isset($_GET['page'])){
-            //     $page = $_GET['page'];
-            // }
-
-            // hien thi du lieu
+            
             $view_name = 'admin_product';
             break;
         case 'product-add':
