@@ -6,7 +6,13 @@ if (isset($_GET['act'])) {
         case 'dashboard':
             //lấy dữ liệu
             include_once 'model/m_user.php';
+            include_once 'model/m_cart.php';
             $countUsers = user_countStatus();
+            $listTopBuy = getUser_TopBuy();
+
+            $totalRevenue = Total_revenue(['TongTien']);
+            $orderNew = count_order();
+            $UserNew = count_UserNew();
             //hiển thị dữ liệu 
             $view_name = 'admin_dashboard';
             break;
@@ -336,6 +342,65 @@ if (isset($_GET['act'])) {
         
                     header("Location: " . $base_url . "/admin/categories");
                     break;
+        case 'categoriespost':
+            include_once 'model/m_news.php';
+            $listCatePost = getAll_categorisPost();
+            
+            $view_name = 'admin_categories_post';
+            break;
+        case 'categoriespost-add':
+            include_once 'model/m_news.php';
+            if(isset($_POST['submit'])){
+                $TenLoaiBV = $_POST['TenLoaiBV'];
+                $ThuTu = $_POST['ThuTu'];
+                $TrangThai = $_POST['TrangThai'];
+
+                catePost_addNew($TenLoaiBV, $ThuTu, $TrangThai);
+                $_SESSION['success'] = "Thêm Loại Bài Viết Mới Thành Công!";
+                header("Location: " . $base_url . "/admin/categoriespost");           
+            }
+
+            $view_name = 'admin_categories_post_add';
+            break;
+        case 'categoriespost-edit':
+            include_once 'model/m_news.php';
+            $MaLoaiBV = $_GET['id'];
+            $lbv = getCatePost_byId($MaLoaiBV);
+
+            if(isset($_POST['submit'])){
+                $TenLoaiBV = $_POST['TenLoaiBV'];
+                $ThuTu = $_POST['ThuTu'];
+                $TrangThai = $_POST['TrangThai'];
+                update_catePost($MaLoaiBV, $TenLoaiBV, $ThuTu, $TrangThai);
+
+                $_SESSION['success'] = "Cập Nhật Loại Bài Viết Mới Thành Công!";
+                header("Location: " . $base_url . "/admin/categoriespost");           
+            }
+
+            $view_name = 'admin_categories_post_edit';
+            break;
+        case 'categoriespost-delete':
+            include_once 'model/m_news.php';
+
+            delete_catePost($_GET['id']);
+
+            $_SESSION['success'] = "Xóa Thành Công Loại Bài Viết!";
+            header("Location: " . $base_url . "/admin/categoriespost");           
+
+        case 'order':
+            include_once 'model/m_cart.php';
+
+            $listOrder = getAll_order();
+            $view_name = 'admin_order';
+            break;
+        case 'delete-order':
+            include_once 'model/m_cart.php';
+
+            delete_order($_GET['id']);
+            $_SESSION['success'] = "Xóa Thành Công Đơn Hàng!";
+            header("Location: " . $base_url . "/admin/order");           
+
+            break;
         default:
             break;
     }

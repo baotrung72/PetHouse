@@ -38,6 +38,10 @@
     function user_edit_personal($MaKH, $HoTen, $Email, $MatKhau, $SoDienThoai, $DiaChi){
         pdo_execute("UPDATE khachhang SET HoTen = ?, Email = ?, MatKhau = ?, SoDienThoai = ?, DiaChi = ? WHERE MaKH = ?",  $HoTen, $Email, $MatKhau, $SoDienThoai, $DiaChi, $MaKH );
     }
-?>
-
+    function getUser_TopBuy(){
+        return pdo_query("SELECT * FROM khachhang kh INNER JOIN donhang dh ON kh.MaKH = dh.MaKH INNER JOIN donhangchitiet ct ON dh.MaDH = ct.MaDH order by TongTien desc limit 5");
+    }
+    function count_UserNew(){
+        return pdo_query_value("SELECT count(*) FROM khachhang where Quyen = 0 ");
+    }
 ?>

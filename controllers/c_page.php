@@ -6,9 +6,9 @@ if (isset($_GET['act'])) {
     switch ($_GET['act']) {
         case 'home':
             //lấy dữ liệu từ model
-            include_once 'model/m_products.php';
             include_once 'model/m_comment.php';
             include_once 'model/m_posts.php';
+            include_once 'model/m_products.php';
 
             $newproducts = getNew_products(); // lấy ra các sp mới
             $reptileproducts = getReptile_products(); // lấy ra các splà bò sát
@@ -19,6 +19,8 @@ if (isset($_GET['act'])) {
             $dsComments = getStand_comments(); //lấy comment nổi bật
 
             $dsPosts = getStand_posts(); // lấy bài viết nổi bật
+            
+            $listPartners = partner();
             // hiển thị dữ liệu ra view
             $view_name = 'page_home';
             break;
@@ -50,14 +52,13 @@ if (isset($_GET['act'])) {
 
             if (!isset($_SESSION['user'])) {
                 $_SESSION['error'] = 'Bạn Chưa Đăng Nhập';
-                header("Location: " . $base_url . "user/login");
+                header("Location: " . $base_url . "/user/login");
                 return;
             }
             //lấy dữ liệu
             $MaKH = $_SESSION['user']['MaKH'];
             $MaSP = $_GET['id'];
-            // $SoLuong;
-            // $Gia;
+            // $MaDH = create_cart($MaKH,$MaDH);
             // kiểm tra có giỏ hàng hay chưa
             $kq = checkCart($MaKH);
             if ($kq) {
@@ -68,6 +69,8 @@ if (isset($_GET['act'])) {
                 if (!$productInCart) {
                     // Sản phẩm chưa có trong giỏ hàng, thêm mới
                     addToCart($MaSP, $MaDH, 'gio-hang');
+                }else{
+                   
                 }
             } else {
                 // Đơn hàng chưa tồn tại, tạo mới
@@ -129,14 +132,28 @@ if (isset($_GET['act'])) {
         case 'payment':
             include_once 'model/m_cart.php';
             include_once 'model/m_products.php';
-            $Cart = [];
-            $TongTien= 0;
 
             $view_name = 'page_payment';
             break;
         case 'thanks':
 
             $view_name = 'page_thanks';
+            break;
+        case 'dieukhoan':
+
+            $view_name = 'page_dieukhoan';
+            break;
+        case 'baomat':
+
+            $view_name = 'page_baomat';
+            break;
+        case 'doitra':
+
+            $view_name = 'page_doitra';
+            break;
+        case 'buy-pay':
+
+            $view_name = 'page_buypay';
             break;
         default:
             # code...

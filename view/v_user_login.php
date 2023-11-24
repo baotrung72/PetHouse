@@ -15,7 +15,6 @@
             </div>
 
             <form class=" g-3 needs-validation" novalidate method="post" action="">
-
                 <div class="col mb-4">
                     <label for="validationCustom02" class="form-label">Email:*</label>
                     <input type="email" name="Email" class="form-control" id="validationCustom02" placeholder="VD: name@gmail.com" required>
@@ -37,7 +36,7 @@
                 <?php endif;
                 unset($_SESSION['error']); ?>
                 <div class="rememberme mt-5">
-                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" >
                     <label class="form-check-label" for="invalidCheck">
                         Nhớ Mật Khẩu
                     </label>
@@ -51,9 +50,9 @@
                 <div class="dacotk" style="font-size: 14px; padding:30px 0 20px 160px;">
 
                     <span style="font-size: 14px; ">Bạn Chưa Có Tài Khoản?</span>
-                    <a href="#" style="padding-left: 5px;">Regester?</a>
+                    <a href="<?=$base_url?>/user/signup" style="padding-left: 5px;">Regester?</a>
                 </div>
-                <div class="link text-center">
+                <div class="link text-center"> 
                     <i class="fa-brands fa-facebook text-primary" style="font-size: 40px; "></i>
                     <span style="padding: 0  20px; ">Hoặc</span>
                     <i class="fa-brands fa-google text-success" style="font-size: 40px;padding: 15px 0 ;"></i>

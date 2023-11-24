@@ -22,5 +22,7 @@
     function get_cmtByService($MaDV){
         return pdo_query("SELECT * FROM binhLuan bl inner join khachhang kh on bl.MaKH = kh.MaKH WHERE bl.MaDV = ?",$MaDV);
     }
-    
+    function count_cmt($MaSP){
+        return pdo_query_value("SELECT COUNT(*) from binhluan where MaSP = ?",$MaSP);
+    }
 ?>

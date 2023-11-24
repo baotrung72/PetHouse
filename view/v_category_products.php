@@ -24,9 +24,9 @@
                         <h5 class="card-title" style="height: 40px;"><?= $sp['TenSP'] ?></h5>
                         <p class="card-text">Size: <strong><?= $sp['hinhdang'] ?></strong></p>
                         <?php if (isset($sp['GiaKM']) && $sp['GiaKM'] > 0) : ?>
-                            <p class="card-price" style="font-size: 14px;">Giá: <del><?= $sp['Gia'] ?>đ</del><strong><?= $sp['GiaKM'] ?>đ</strong></p>
+                            <p class="card-price" style="font-size: 14px;">Giá: <del><?= number_format($sp['Gia'], 0, ',', '.') ?> VNĐ</del><strong><?= number_format($sp['GiaKM'], 0, ',', '.') ?> VNĐ</strong></p>
                         <?php else : ?>
-                            <p class="card-price d-n" style="font-size: 14px;">Giá: <strong><?= $sp['Gia'] ?>đ</strong></p>
+                            <p class="card-price d-n" style="font-size: 14px;">Giá: <strong><?= number_format($sp['Gia'], 0, ',', '.') ?> VNĐ</strong></p>
                         <?php endif; ?>
                         <div class="btn-buy d-flex text-center">
                             <a href="<?= $base_url ?>/product/detail&id=<?= $sp['MaSP'] ?>" class="btn btn-warning" style=" margin-left: 15px;">Chi

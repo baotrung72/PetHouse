@@ -42,3 +42,6 @@ link[rel="icon"] {
     height: 32px; 
     filter: brightness(150%);
 }
+text{
+    display: none;
+}

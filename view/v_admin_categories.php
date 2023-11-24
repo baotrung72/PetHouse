@@ -8,6 +8,12 @@
         </div>
 
         <h4>Danh Sách Danh Mục</h4>
+        <?php if (isset($_SESSION['success'])) : ?>
+            <div class="alert alert-success" role="alert">
+                <?= $_SESSION['success'] ?>
+            </div>
+        <?php endif;
+        unset($_SESSION['success']); ?>
         <hr class="line1">
         <div class="table-product">
             <table width="100%">
