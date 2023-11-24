@@ -23,7 +23,6 @@
           <div style="padding:20px 50px; height: 450px; ">
             <h5 style="margin-bottom: 50px;">Thông tin tài khoản</h5>
             <table>
-
               <body>
                 <tr>
                   <div>

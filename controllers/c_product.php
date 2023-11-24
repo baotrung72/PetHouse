@@ -33,8 +33,12 @@ if (isset($_GET['act'])) {
             break;
         case 'detail':
             //lấy dữ liệu từ model
-            include_once 'model/m_products.php';
             include_once 'model/m_comment.php';
+            include_once 'model/m_products.php';
+            
+            
+            $countCmt = count_cmt($_GET['id']);
+            
             $detailProduct = product_getById($_GET['id']); // lấy 1 sản phẩm theo id
             $productSimilar = product_getSimilar($detailProduct['MaDM']); // lấy sản phẩm tượng tự theo danh mục 
 
@@ -45,10 +49,18 @@ if (isset($_GET['act'])) {
         case 'search':
             //lấy dữ liệu từ model
             include_once 'model/m_products.php';
+
             if (isset($_POST['keyword'])) {
                 header("Location: " . $base_url . "/product/search&keyword=" . $_POST['keyword']);
             }
-            $ketQuaTimKiem = product_search($_GET['keyword']);
+
+            $slide = 1;
+            if (isset($_GET['slide'])) {
+                $slide = $_GET['slide'];
+            }
+            $ketQuaTimKiem = product_search($_GET['keyword'], $slide);
+            $soTrang = ceil(product_searchTotal($_GET['keyword']) / 4);
+
 
             // hiển thị dữ liệu ra view
             $view_name = 'product_search';
@@ -57,10 +69,11 @@ if (isset($_GET['act'])) {
             //lấy dữ liệu từ model
             include_once 'model/m_comment.php';
             include_once 'model/m_products.php';
+
             comment_add($_SESSION['user']['MaKH'], $_POST['MaSP'], $_POST['NoiDung']);
             header("Location: " . $base_url . "/product/detail&id=" . $_POST['MaSP'] . "");
             break;
-        
+
 
 
         default:

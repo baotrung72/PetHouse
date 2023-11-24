@@ -27,13 +27,6 @@
         <div class="row">
             <div class="col-sm-8 mb-3 mb-sm-0">
                 <form action="<?= $base_url ?>/page/updateCart" method="post">
-
-                    <input type="hidden" name="MaDH" class="MaDHProduct" value="<?= $item['MaDH'] ?>">
-                    <input type="hidden" name="MaSP" class="MaSPProduct" value="<?= $item['MaSP'] ?>">
-                    <input type="hidden" name="SoLuong" class="SoLuongProduct" value="<?= $item['SoLuong'] ?>">
-                    <input type="hidden" name="Gia" class="GiaProduct" value="<?= $item['Gia'] ?>">
-                    <input type="hidden" name="TrangThai" class="TrangThaiProduct" value="<?= $item['TrangThai'] ?>">
-                    <input type="hidden" name="TongTien" class="TongTienProduct" value="0">
                     <table class="table ">
                         <thead>
                             <tr>
@@ -47,25 +40,23 @@
                         <tbody>
                             <?php $i = 1;
                             foreach ($Cart as $item) : ?>
-
                                 <tr>
                                     <td><?= $i ?></td>
                                     <td>
                                         <img src="<?= $base_url ?>/template/assets_user/image/<?= $item['Hinh'] ?>" alt="" width="50px" style="margin-right: 10px; border-radius: 3px;"><?= $item['TenSP'] ?>
                                     </td>
-                                    <td class="text-center" id="DonGiaProduct" name="Gia"><?= $item['Gia'] ?></td>
+                                    <td class="text-center" name="Gia" id="DonGiaProduct<?= $i ?>"><?= $item['Gia'] ?></td>
                                     <td class="text-center">
                                         <div class="btn-group me-1" role="group" aria-label="Second group" style="font-size: 12px;">
-                                            <input type="number" style="width: 60px;border:none;" class="btn btn" name="SoLuong" id="SoLuongProduct" value="<?= $item['SoLuong'] ?>" min="1">
+                                            <!-- Sử dụng chỉ số $i để tạo tên và id động cho input -->
+                                            <input type="number" style="width: 60px; border:none;" class="btn btn" name="SoLuong[<?= $i ?>]" id="SoLuongProduct<?= $i ?>" value="<?= $item['SoLuong'] ?>" min="1">
                                         </div>
                                     </td>
                                     <td class="text-center" id="ThanhTien<?= $i ?>" name="ThanhTien"><?= $ThanhTien = $item['Gia'] * $item['SoLuong'] ?></td>
                                     <td style="width: 20px;"><a href="<?= $base_url ?>/page/delete-cart&id=<?= $item['MaSP'] ?>"><i class="fa-solid fa-trash"></i></a></td>
-                                <tr>
-                                    <?php $TongTien += $ThanhTien; ?>
-                                <?php $i++;
+                                </tr>
+                            <?php $i++;
                             endforeach; ?>
-
                         </tbody>
                     </table>
                     <div>
@@ -94,16 +85,14 @@
                             <tbody>
                                 <?php foreach ($Cart as $item) : ?>
                                     <tr>
-                                        <td><?= $item['TenSP'] ?> x<?= $item['SoLuong'] ?></td>
-                                        <td><?= $ThanhTien = $item['Gia'] * $item['SoLuong'] ?>đ</td>
+                                        <td><?= $item['TenSP'] ?> x<span class="quantity"><?= $item['SoLuong'] ?></span></td>
+                                        <td class="price"><?= $ThanhTien = $item['Gia'] * $item['SoLuong'] ?>đ</td>
                                     </tr>
                                     <?php $TongTien += $ThanhTien; ?>
                                 <?php endforeach; ?>
-
-
                                 <tr>
-                                    <td><strong>Tổng :</strong> </td>
-                                    <td><?= $TongTien ?>đ</td>
+                                    <td><strong>Tổng :</strong></td>
+                                    <td class="total-price"><?= $TongTien ?>đ</td>
                                 </tr>
                                 <tr>
                                     <td>
@@ -118,6 +107,19 @@
 
         </div>
     </form>
-    <button type="button" class="btn btn-warning" style="margin: 20px 0;"><i class="fa-solid fa-arrow-left" style="padding-right:10px ; color: #ffffff;"></i><span style="color: #ffffff;">Xem Sản
-            Phẩm</span></button>
+    <button type="button" class="btn btn-warning" style="margin: 20px 0;"><i class="fa-solid fa-arrow-left" style="padding-right:10px ; color: #ffffff;"></i><span style="color: #ffffff;">Xem Sản Phẩm</span>
+    </button>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $("input[name^='SoLuong']").on('change', function() {
+            var index = $(this).attr('id').replace('SoLuongProduct', '');
+            var quantity = parseInt($(this).val());
+            var price = parseFloat($("#DonGiaProduct" + index).text());
+            var total = quantity * price;
+            $("#ThanhTien" + index).text(total);
+        });
+    });
+</script> 

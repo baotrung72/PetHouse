@@ -39,7 +39,6 @@ if (isset($_GET['act'])) {
                     header("Location: " . $base_url . "/user/login");
                 }
             }
-
             // hiển thị dữ liệu ra view
             $view_name = 'user_signup';
             break;

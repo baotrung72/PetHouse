@@ -7,13 +7,13 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="<?= $base_url ?>/template/assets_user/image/banner3.jpg" class="d-block w-100" alt="..." style="height: 560px;">
+                <img src="<?= $base_url ?>/template/assets_user/image/bannerpethouse1.jpg" class="d-block w-100" alt="..." style="height: 580px; object-fit:cover;">
             </div>
             <div class="carousel-item">
-                <img src="<?= $base_url ?>/template/assets_user/image/banner2.jpg" class="d-block w-100" alt="..." style="height: 560px;">
+                <img src="<?= $base_url ?>/template/assets_user/image/bannerpethouse2.jpg" class="d-block w-100" alt="..." style="height: 580px;">
             </div>
             <div class="carousel-item">
-                <img src="<?= $base_url ?>/template/assets_user/image/banner1.jpg" class="d-block w-100" alt="..." style="height: 560px;">
+                <img src="<?= $base_url ?>/template/assets_user/image/bannerpethouse3.jpg" class="d-block w-100" alt="..." style="height: 580px;">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -109,14 +109,14 @@
                                 <h5 class="card-title" style="height: 40px;"><?= $sp['TenSP'] ?></h5>
                                 <p class="card-text">Size: <strong><?= $sp['hinhdang'] ?></strong></p>
                                 <?php if (isset($sp['GiaKM']) && $sp['GiaKM'] > 0) : ?>
-                                    <p class="card-price" style="font-size: 14px;">Giá: <del><?= $sp['Gia'] ?>đ</del><strong><?= $sp['GiaKM'] ?>đ</strong></p>
+                                    <p class="card-price" style="font-size: 14px;">Giá: <del><?= number_format($sp['Gia'], 0, ',', '.') ?> VNĐ</del><strong><?= number_format($sp['GiaKM'], 0, ',', '.') ?> VNĐ</strong></p>
                                 <?php else : ?>
-                                    <p class="card-price d-n" style="font-size: 14px;">Giá: <strong><?= $sp['Gia'] ?>đ</strong></p>
+                                    <p class="card-price d-n" style="font-size: 14px;">Giá: <strong><?= number_format($sp['Gia'], 0, ',', '.') ?> VNĐ</strong></p>
                                 <?php endif; ?>
                                 <div class="btn-buy d-flex text-center">
                                     <a href="<?= $base_url ?>/product/detail&id=<?= $sp['MaSP'] ?>" class="btn btn-warning" style=" margin-left: 15px;">Chi
                                         Tiết</a>
-                                    <a href="#" class="btn btn-warning" style=" margin-left: 50px;">Mua
+                                    <a href="<?= $base_url ?>/page/addToCart&id=<?= $sp['MaSP'] ?>" class="btn btn-warning" style=" margin-left: 50px;">Mua
                                         Ngay</a>
                                 </div>
                             </div>
@@ -142,13 +142,13 @@
                                     <h5 class="card-title" style="height: 40px;"><?= $sp['TenSP'] ?></h5>
                                     <p class="card-text">Size: <strong><?= $sp['hinhdang'] ?></strong></p>
                                     <?php if (isset($sp['GiaKM']) && $sp['GiaKM'] > 0) : ?>
-                                        <p class="card-price" style="font-size: 14px;">Giá: <del><?= $sp['Gia'] ?>đ</del><strong><?= $sp['GiaKM'] ?>đ</strong></p>
+                                        <p class="card-price" style="font-size: 14px;">Giá: <del><?= number_format($sp['Gia'], 0, ',', '.') ?> VNĐ</del><strong><?= number_format($sp['GiaKM'], 0, ',', '.') ?> VNĐ</strong></p>
                                     <?php else : ?>
-                                        <p class="card-price d-n" style="font-size: 14px;">Giá: <strong><?= $sp['Gia'] ?>đ</strong></p>
+                                        <p class="card-price d-n" style="font-size: 14px;">Giá: <strong><?= number_format($sp['Gia'], 0, ',', '.') ?> VNĐ</strong></p>
                                     <?php endif; ?>
                                     <div class="btn-buy d-flex text-center">
                                         <a href="<?= $base_url ?>/product/detail&id=<?= $sp['MaSP'] ?>" class="btn btn-warning" style=" margin-left: 15px;">Chi Tiết</a>
-                                        <a href="#" class="btn btn-warning" style=" margin-left: 50px;">Mua Ngay</a>
+                                        <a href="<?= $base_url ?>/page/addToCart&id=<?= $sp['MaSP'] ?>" class="btn btn-warning" style=" margin-left: 50px;">Mua Ngay</a>
                                     </div>
                                 </div>
                             </div>
@@ -180,14 +180,14 @@
                             <h5 class="card-title" style="height: 40px;"><?= $dv['TenDV'] ?></h5>
                             <p class="card-text"><?= $dv['mota'] ?></p>
                             <?php if (isset($dv['GiaKM']) && $dv['GiaKM'] > 0) : ?>
-                                <p class="card-price" style="font-size: 14px;">Giá: <del><?= $dv['Gia'] ?>đ</del><strong><?= $dv['GiaKM'] ?>đ</strong></p>
+                                <p class="card-price" style="font-size: 14px;">Giá: <del><?= number_format($dv['Gia'], 0, ',', '.') ?> VNĐ</del><strong><?= number_format($dv['GiaKM'], 0, ',', '.') ?> VNĐ</strong></p>
                             <?php else : ?>
-                                <p class="card-price d-n" style="font-size: 14px;">Giá: <strong><?= $dv['Gia'] ?>đ</strong></p>
+                                <p class="card-price d-n" style="font-size: 14px;">Giá: <strong><?= number_format($dv['Gia'], 0, ',', '.') ?> VNĐ</strong></p>
                             <?php endif; ?>
                             <div class="btn-buy d-flex text-center">
                                 <a href="<?= $base_url ?>/category/detail&id=<?= $dv['MaDV'] ?>" class="btn btn-warning" style=" margin-left: 15px;">Chi
                                     Tiết </a>
-                                <a href="#" class="btn btn-warning" style=" margin-left: 50px;">Đặt
+                                <a href="<?= $base_url ?>/page/addToCart&id=<?= $dv['MaDV'] ?>" class="btn btn-warning" style=" margin-left: 50px;">Đặt
                                     Ngay</a>
                             </div>
                         </div>
@@ -219,14 +219,14 @@
                             <p class="card-text " style="font-size: 14px;">Size: <strong><?= $sp['hinhdang'] ?></strong></p>
 
                             <?php if (isset($sp['GiaKM']) && $sp['GiaKM'] > 0) : ?>
-                                <p class="card-price" style="font-size: 14px;">Giá: <del><?= $sp['Gia'] ?>đ</del><strong><?= $sp['GiaKM'] ?>đ</strong></p>
+                                <p class="card-price" style="font-size: 14px;">Giá: <del><?= number_format($sp['Gia'], 0, ',', '.') ?> VNĐ</del><strong><?= number_format($sp['GiaKM'], 0, ',', '.') ?> VNĐ</strong></p>
                             <?php else : ?>
-                                <p class="card-price" style="font-size: 14px;">Giá: <strong><?= $sp['Gia'] ?>đ</strong></p>
+                                <p class="card-price" style="font-size: 14px;">Giá: <strong><?= number_format($sp['Gia'], 0, ',', '.') ?> VNĐ</strong></p>
                             <?php endif; ?>
                             <div class="btn-buy d-flex text-center">
                                 <a href="<?= $base_url ?>/product/detail&id=<?= $sp['MaSP'] ?>" class="btn btn-warning" style=" margin-left: 15px;">Chi
                                     Tiết </a>
-                                <a href="#" class="btn btn-warning" style=" margin-left: 50px;">Mua
+                                <a href="<?= $base_url ?>/page/addToCart&id=<?= $sp['MaSP'] ?>" class="btn btn-warning" style=" margin-left: 50px;">Mua
                                     Ngay</a>
                             </div>
                         </div>
@@ -250,31 +250,30 @@
             <div class="col-md-6 ">
                 <img src="<?= $base_url ?>/template/assets_user/image/hd1.jpg" alt="" style="width: 640px; border-radius: 5px;">
                 <p class="p-3 pt-2" style="border-radius: 5px;width: 640px;background-color: #e2f2f2;box-shadow: 0.5px 0.5px gray;">
-                    <a href="#" style="text-decoration: none; color: #212529;">Hướng dẫn chi tiết về chăm sóc
-                        thú
-                        cưng một cách tốt nhất</a>
+                    <a href="https://youtu.be/-nYYwsA7q5I?si=gElTiJSjbVbwojLn" style="text-decoration: none; color: #212529;">Hướng dẫn chi tiết về chăm sóc
+                        thú cưng một cách tốt nhất</a>
                 </p>
             </div>
             <div class="col-md-6">
                 <div class="hd-right">
                     <div class="hd d-flex mb-3" style="border-radius: 5px; background-color: #e2f2f2; box-shadow: 2px 0.5px gray;">
                         <img src="<?= $base_url ?>/template/assets_user/image/hd2.jpg" alt="" style="width: 150px;border-radius: 5px; ">
-                        <span class="text-center w-100 pt-4" style="font-size: 21px;"><a href="#" style="text-decoration:none; color:#212529;">Hướng dẫn nuôi mèo cưng cho người
+                        <span class="text-center w-100 pt-4" style="font-size: 21px;"><a href="https://youtu.be/XOITn1vW-6c?si=ekL2ce4zLeVxBcW0" style="text-decoration:none; color:#212529;">Hướng dẫn nuôi mèo cưng cho người
                                 mới</a></span>
                     </div>
                     <div class="hd d-flex mb-3" style="border-radius: 5px; background-color: #e2f2f2; box-shadow: 2px 0.5px gray;">
                         <img src="<?= $base_url ?>/template/assets_user/image/hd3.jpg" alt="" style="width: 150px;border-radius: 5px; ">
-                        <span class="text-center w-100 pt-4" style="font-size: 21px;"><a href="#" style="text-decoration:none; color:#212529;">Chăm sóc chó Poodle từ A đến
+                        <span class="text-center w-100 pt-4" style="font-size: 21px;"><a href="https://youtu.be/M7-9lI4JUpc?si=jh5Z6NqgDJFXWN5y" style="text-decoration:none; color:#212529;">Chăm sóc chó Poodle từ A đến
                                 Z</a></span>
                     </div>
                     <div class="hd d-flex mb-3" style="border-radius: 5px; background-color: #e2f2f2; box-shadow: 2px 0.5px gray;">
                         <img src="<?= $base_url ?>/template/assets_user/image/hd4.jpg" alt="" style="width: 150px;border-radius: 5px; ">
-                        <span class="text-center w-100 pt-4" style="font-size: 21px;"><a href="#" style="text-decoration:none; color:#212529;">Cách nuôi, chăm sóc chó
+                        <span class="text-center w-100 pt-4" style="font-size: 21px;"><a href="https://youtu.be/TVedK3jdlr8?si=Ii4DmbEmYc-LF2rF" style="text-decoration:none; color:#212529;">Cách nuôi, chăm sóc chó
                                 Alaska</a></span>
                     </div>
                     <div class="hd d-flex mb-3" style="border-radius: 5px; background-color: #e2f2f2; box-shadow: 2px 0.5px gray;">
                         <img src="<?= $base_url ?>/template/assets_user/image/hd5.jpg" alt="" style="width: 150px;border-radius: 5px; ">
-                        <span class="text-center w-100 pt-4" style="font-size: 21px;"><a href="#" style="text-decoration:none; color:#212529;">Kỹ thuật nuôi chó Corgi</a></span>
+                        <span class="text-center w-100 pt-4" style="font-size: 21px;"><a href="https://youtu.be/evCJeF6t-OA?si=xKNe5FmEBy9UnkL0" style="text-decoration:none; color:#212529;">Kỹ thuật nuôi chó Corgi</a></span>
                     </div>
                 </div>
             </div>
@@ -322,10 +321,10 @@
                     <div class="col m-2" style=" width: 310px; ">
                         <img src="<?= $base_url ?>/template/assets_user/image/<?= $bv['Hinh'] ?>" alt="" style="width: 400px; height: 250px; margin-right: 20px; object-fit: cover;">
                         <div style="margin: 10px 0;">
-                            <strong><span><?= $bv['TieuDe'] ?></span></strong>
+                            <strong><span><a href="<?= $base_url ?>/news/detail&id=<?= $bv['MaBV'] ?>"><?= $bv['TieuDe'] ?></a></span></strong>
                         </div>
                         <div style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; content:'...'">
-                            <p style="font-size: 14px; ;"><?= $bv['NoiDung'] ?></p>
+                            <p href="<?=$base_url?>/news/new" style="font-size: 14px; ;"><?= $bv['NoiDung'] ?></p>
                         </div>
 
                     </div>
@@ -339,25 +338,15 @@
     </div>
 </section>
 <section>
-    <div class="brands  mt-5">
+    <div class="brands  mt-5 mb-5">
         <div class="container text-center">
             <div class="row ">
+                <?php foreach($listPartners as $dt):?>
                 <div class="col">
-                    <img src="<?= $base_url ?>/template/assets_user/image/b1.webp" alt="">
+                    <img src="<?= $base_url ?>/template/assets_user/image/<?=$dt['Hinh']?>" alt="">
                 </div>
-                <div class="col">
-                    <img src="<?= $base_url ?>/template/assets_user/image/b2.webp" alt="">
-                </div>
-                <div class="col">
-                    <img src="<?= $base_url ?>/template/assets_user/image/b3.webp" alt="">
-                </div>
-                <div class="col">
-                    <img src="<?= $base_url ?>/template/assets_user/image/b4.webp" alt="">
-                </div>
-                <div class="col">
-                    <img src="<?= $base_url ?>/template/assets_user/image/b5.webp" alt="">
-                </div>
-
+                
+                    <?php endforeach;?>
             </div>
         </div>
     </div>

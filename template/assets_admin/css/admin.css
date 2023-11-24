@@ -253,12 +253,13 @@ body{
     padding-left: 75px;
 }
 #category .main-form .form-p2 .note1 h5{
-    padding-left: 150px;
+    padding-left: 120px;
     padding-top: 10px;
     color: #3ecf0e;
 }
 #category .main-form .form-p2 .note1 span{
-    padding-left: 70px;
+    padding-left: 80px;
+    margin-top: 10px;
     
 }
 #category .main-form .form-p3{

@@ -48,11 +48,7 @@
                     </ul>
                 <?php endif; ?>
             </div>
-            <!-- <img src="<?= $base_url ?>/template/assets_admin/image/avt.jpg" alt="">
-            <div class="name">
-                <span>Phạm Hữu Ngọc Hà</span>
-                <p>admin</p>
-            </div> -->
+            
         </div>
     </section>
     <section id="category">
@@ -98,6 +94,15 @@
                 </div>
                 <div class=" " style="background-color: #2e363f;">
                     <div class="total-menu d-flex" style="width: 300px; padding: 15px 0 15px 50px;">
+                        <i class="fa-solid fa-layer-group" style="font-size: 20px; margin-right: 20px;margin-top: 2px;"></i>
+                        <a href="<?=$base_url?>/admin/categoriespost" class="list-group-item list-group-item-action active" aria-current="true">
+                            Quản Lý Loại Bài Viết
+                        </a>
+                    </div>
+
+                </div>
+                <div class=" " style="background-color: #2e363f;">
+                    <div class="total-menu d-flex" style="width: 300px; padding: 15px 0 15px 50px;">
                         <i class="fa-solid fa-blog" style="font-size: 20px; margin-right: 20px;margin-top: 2px;"></i>
                         <a href="<?=$base_url?>/admin/post" class="list-group-item list-group-item-action active" aria-current="true">
                             Quản Lý Bài Viết
@@ -117,7 +122,7 @@
                 <div class=" " style="background-color: #2e363f;">
                     <div class="total-menu d-flex" style="width: 300px; padding: 15px 0 15px 50px;">
                         <i class="fa-solid fa-file-pen" style="font-size: 20px; margin-right: 20px;margin-top: 2px;"></i>
-                        <a href="order.html" class="list-group-item list-group-item-action active" aria-current="true">
+                        <a href="<?=$base_url?>/admin/order" class="list-group-item list-group-item-action active" aria-current="true">
                             Quản Lý Đơn Hàng
                         </a>
                     </div>
@@ -136,15 +141,13 @@
         </div>
         <main>
             <?php include_once 'view/v_' . $view_name . '.php'; ?>
-            <div class="footer">
+            <!-- <div class="footer">
                 <div class="mac">
-                    <h4>HaphamEditor — TryHard by HTML CSS © 2021</h4>
+                    <h4>© 2021</h4>
                 </div>
-                <div class="mac2">
-                    <h4>Company PetHouse - CEO HaPham </h4>
-                </div>
-            </div>
-            </div>
+                
+            </div> -->
+            <!-- </div> -->
         </main>
     </section>
 </body>

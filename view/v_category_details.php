@@ -20,7 +20,7 @@
                 <h3><?= $detailcategory['TenDV'] ?></h3> <br>
                 <p><?= $detailcategory['mota'] ?></p>
 
-                <h3 style="padding-top: 50px;">Giá: <dvan class="text-danger"><?= $detailcategory['Gia'] ?>đ</dvan>
+                <h3 style="padding-top: 50px;">Giá: <dvan class="text-danger"><?= number_format($detailcategory['Gia'], 0, ',', '.') ?>VNĐ</dvan>
                 </h3>
 
                 <div class="quantity d-flex pt-5">
@@ -78,9 +78,9 @@
                             <div class="card-body">
                                 <h5 class="card-title" style="height: 40px;"><?= $dv['TenDV'] ?></h5>
                                 <?php if (isset($dv['GiaKM']) && $dv['GiaKM'] > 0) : ?>
-                                    <p class="card-price" style="font-size: 14px;">Giá: <del><?= $dv['GiaKM'] ?>đ</del><strong><?= $dv['Gia'] ?>đ</strong></p>
+                                    <p class="card-price" style="font-size: 14px;">Giá: <del><?= number_format($dv['GiaKM'], 0, ',', '.') ?> VNĐ</del><strong><?= number_format($dv['Gia'], 0, ',', '.') ?> VNĐ</strong></p>
                                 <?php else : ?>
-                                    <p class="card-price d-n" style="font-size: 14px;">Giá: <strong><?= $dv['Gia'] ?>đ</strong></p>
+                                    <p class="card-price d-n" style="font-size: 14px;">Giá: <strong><?= number_format($dv['Gia'], 0, ',', '.') ?> VNĐ</strong></p>
                                 <?php endif; ?>
                                 <div class="btn-buy d-flex text-center">
                                     <a href="<?= $base_url ?>/category/detail&id=<?= $dv['MaDV'] ?>" class="btn btn-warning" style=" margin-left: 15px;">Chi Tiết</a>

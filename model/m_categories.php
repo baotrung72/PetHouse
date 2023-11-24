@@ -24,7 +24,7 @@
         return pdo_execute("INSERT INTO danhmuc(`TenDM`,`ThuTu`,`TrangThai`,`Hinhanh`) values (?,?,?,?)",$TenDM,$ThuTu,$TrangThai, $Hinhanh);
     }
     function categories_checkName($TenDM){
-        return pdo_query("SELECT * FROM danhmuc where TenDM = ?",$TenDM);
+        return pdo_query("SELECT * FROM danhmuc where TenDM = ? and TrangThai = 0",$TenDM);
     }
     function categories_edit($MaDM, $TenDM, $ThuTu, $TrangThai){
         pdo_execute("UPDATE danhmuc SET TenDM = ?, ThuTu = ?, TrangThai = ? WHERE MaDM = ?",  $TenDM, $ThuTu,$TrangThai, $MaDM);
