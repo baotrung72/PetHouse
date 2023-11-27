@@ -3,7 +3,7 @@
         <ol class="breadcrumb">
             <li class="breadcrumb-item" style="text-decoration: none; color: #212529;"><a href="<?= $base_url ?>/page/home">Trang Chủ</a>
             </li>
-            <li class="breadcrumb-item" style="text-decoration: none; color: #212529;"><a href="#">Sản Phẩm</a></li>
+            <li class="breadcrumb-item" style="text-decoration: none; color: #212529;"><a href="<?= $base_url ?>/product/product-total">Sản Phẩm</a></li>
             <li class="breadcrumb-item" style="text-decoration: none; color: #212529;">Chi Tiết</li>
         </ol>
     </nav>
@@ -32,7 +32,7 @@
                     </div>
                 </div>
                 <div style="padding-top: 70px;">
-                    <button type="button" class="btn btn-warning">Thêm Vào Giỏ Hàng</button>
+                    <button type="button" class="btn btn-warning" style="color:#ffffff;">Thêm Vào Giỏ Hàng</button>
                 </div>
                 <div style="padding-top: 50px; width: 200px;">
                     <h5>Tham Khảo Thêm Tại:</h5>
@@ -83,8 +83,8 @@
                                     <p class="card-price d-n" style="font-size: 14px;">Giá: <strong><?= number_format($dv['Gia'], 0, ',', '.') ?> VNĐ</strong></p>
                                 <?php endif; ?>
                                 <div class="btn-buy d-flex text-center">
-                                    <a href="<?= $base_url ?>/category/detail&id=<?= $dv['MaDV'] ?>" class="btn btn-warning" style=" margin-left: 15px;">Chi Tiết</a>
-                                    <a href="#" class="btn btn-warning" style=" margin-left: 50px;">Mua Ngay</a>
+                                    <a href="<?= $base_url ?>/category/detail&id=<?= $dv['MaDV'] ?>" class="btn btn-warning" style=" margin-left: 15px; color:#ffffff;">Chi Tiết</a>
+                                    <a href="#" class="btn btn-warning" style=" margin-left: 50px; color:#ffffff;">Mua Ngay</a>
                                 </div>
                             </div>
                         </div>

@@ -20,7 +20,7 @@
         <div class="container-header">
             <nav class="navbar navbar-expand-lg p-0" style="background-color: #f1b306;">
                 <div class="container-fluid" style=" color: #ffffff;">
-                    <a class="navbar-brand " href="<?= $base_url ?>/page/home"><img src="<?= $base_url ?>/template/assets_user/image/logopethouse.png" alt="" style="width: 250px;margin-left: 20px;" ></a>
+                    <a class="navbar-brand img-logo " href="<?= $base_url ?>/page/home"><img class="img-fluid" src="<?= $base_url ?>/template/assets_user/image/logopethouse.png" alt="" style="width: 250px;margin-left: 20px;" ></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -46,7 +46,7 @@
                                                 <img src="<?= $base_url ?>/template/assets_user/image/<?= $_SESSION['user']['HinhAnh'] ?>" style="border-radius: 50%; object-fit:cover;" width="35px" height="35px" alt="">
                                             </button>
                                             <ul class="dropdown-menu end-0" style="left:auto">
-                                                <li><a class="dropdown-item active" href="<?= $base_url ?>/user/personal">Thông Tin</a></li>
+                                                <li><a class="dropdown-item" href="<?= $base_url ?>/user/personal">Thông Tin</a></li>
                                                 <li><a class="dropdown-item" href="#">Lịch Sử</a></li>
                                                 <?php if ($_SESSION['user']['Quyen'] == 1) : ?>
                                                     <li><a class="dropdown-item" href="<?= $base_url ?>/admin/dashboard">Trang Quản Trị</a></li>
@@ -165,7 +165,6 @@
                             <div class="col" style="color: #79d1e7;">
                                 <a href="#" style="text-decoration: none; color: #79d1e7;"><i class="fa-brands fa-twitter"></i></a>
                             </div>
-
                             <div class="col" style="color: #4575cd;">
                                 <a href="#" style="text-decoration: none; color: #4575cd;"><i class="fa-brands fa-facebook"></i></i></a>
                             </div>
@@ -177,17 +176,8 @@
                             <div class="col" style="color: #eb3e32;">
                                 <a href="#" style="text-decoration: none; color: #eb3e32;"><i class="fa-brands fa-youtube"></i></a>
                             </div>
-
-                            <div class="col" style="color: #7a7a7a;">
-                                <a href="#" style="text-decoration: none; color: #7a7a7a;"><i class="fa-solid fa-wifi"></i></a>
-                            </div>
-
                         </div>
-                    </div>
-                    <!-- <h5 class="mt-5">Chứng Nhận</h5>
-                    <div class="mt-3">
-                        <img src="<?= $base_url ?>/template/assets_user/image/chungnhan.png" alt="">
-                    </div> -->
+                    </div>                   
                 </div>
             </div>
         </div>

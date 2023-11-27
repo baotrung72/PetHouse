@@ -13,10 +13,10 @@
                 <label for="validationDefaultUsername" class="form-label">Tên Tài Khoản : </label>
                 <input type="text" class="form-control" name="HoTen" value="<?= $kh['HoTen'] ?>">
             </div>
-            <div class="col-md-7 mb-3">
+            <!-- <div class="col-md-7 mb-3">
                 <label for="validationDefaultUsername" class="form-label">Mật Khẩu : </label>
                 <input type="text" class="form-control" name="MatKhau" value="<?= $kh['MatKhau'] ?>">
-            </div>
+            </div> -->
 
             <div class="col-md-7 mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Email :</label>

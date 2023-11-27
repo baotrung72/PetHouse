@@ -1,7 +1,7 @@
 <div class="container mb-5">
     <nav aria-label="breadcrumb" class="section-p2" style="padding: 20px 0 30px 0%;">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item" style="text-decoration: none; color: #212529;"><a href="#">Trang Chủ</a>
+            <li class="breadcrumb-item" style="text-decoration: none; color: #212529;"><a href="<?= $base_url ?>/page/home">Trang Chủ</a>
             </li>
             <li class="breadcrumb-item" style="text-decoration: none; color: #212529;"><a href="#">Giỏ Hàng</a></li>
             <li class="breadcrumb-item" style="text-decoration: none; color: #212529;">Thanh Toán</li>

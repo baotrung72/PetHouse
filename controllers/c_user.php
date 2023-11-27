@@ -62,10 +62,10 @@ if (isset($_GET['act'])) {
                 $Email = $_POST['Email'];
                 $SoDienThoai = $_POST['SoDienThoai'];
                 $DiaChi = $_POST['DiaChi'];
-                $MatKhau = $_POST['MatKhau'];
+                // $MatKhau = $_POST['MatKhau'];
 
                 
-                user_edit_personal($MaKH, $HoTen, $Email, $MatKhau, $SoDienThoai, $DiaChi);
+                user_edit_personal($MaKH, $HoTen, $Email, $SoDienThoai, $DiaChi);
 
                 $_SESSION['success'] = "Cập Nhật Tài Khoản Thành Công";
                 header("Location: " . $base_url . "/user/personal");

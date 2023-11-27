@@ -45,8 +45,8 @@
                             <button type="button" class="btn btn-secondary" id="add">+</button>
                         </div>
                     </div>
-                    <div style="padding-top: 70px;">
-                        <a href="<?= $base_url ?>/page/addToCart&id=<?= $detailProduct['MaSP'] ?>" type="submit" class="btn btn-warning">Thêm Vào Giỏ Hàng</a>
+                    <div style="padding-top: 70px; ">
+                        <a href="<?= $base_url ?>/page/addToCart&id=<?= $detailProduct['MaSP'] ?>" type="submit" class="btn btn-warning" style="color:#ffffff;">Thêm Vào Giỏ Hàng</a>
                     </div>
                     <div style="padding-top: 50px; width: 250px;">
                         <h5>Tham Khảo Thêm Tại:</h5>
@@ -99,7 +99,7 @@
                         <div class="p-2 w-100 ">
                             <h6><?= $cmt['HoTen'] ?></h6>
                             <span style="font-size: 12px;">Thời Gian: <?= $cmt['NgayGui'] ?></span>
-                            <p style="width: 600px; padding-top: 10px;"><?= $cmt['NoiDung'] ?>😁</p>
+                            <p style="width: 600px; padding-top: 10px;"><?= $cmt['NoiDung'] ?></p>
                         </div>
                     </div>
                 <?php endforeach; ?>
@@ -133,8 +133,8 @@
                                         <p class="card-price d-n" style="font-size: 14px;">Giá: <strong><?= number_format($sp['Gia'], 0, ',', '.') ?> VNĐ</strong></p>
                                     <?php endif; ?>
                                     <div class="btn-buy d-flex text-center">
-                                        <a href="<?= $base_url ?>/product/detail&id=<?= $sp['MaSP'] ?>" class="btn btn-warning" style=" margin-left: 15px;">Chi Tiết</a>
-                                        <a href="#" class="btn btn-warning" style=" margin-left: 50px;">Mua Ngay</a>
+                                        <a href="<?= $base_url ?>/product/detail&id=<?= $sp['MaSP'] ?>" class="btn btn-warning" style=" margin-left: 15px; color:#ffffff;">Chi Tiết</a>
+                                        <a href="#" class="btn btn-warning" style=" margin-left: 50px; color:#ffffff;">Mua Ngay</a>
                                     </div>
                                 </div>
                             </div>

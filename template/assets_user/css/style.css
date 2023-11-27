@@ -45,3 +45,8 @@ link[rel="icon"] {
 text{
     display: none;
 }
+@media (max-width: 768px) {
+    .img-logo img{
+        width: 30px;
+    }
+}

@@ -584,3 +584,10 @@ table tbody td{
     width: 200px;
     height: 30px; 
 }
+
+.thanhmenu{
+    transition: 0.3s;
+}
+.thanhmenu:hover{
+    background-color: #48525a;
+}

@@ -19,7 +19,7 @@ if (isset($_GET['act'])) {
             $dsComments = getStand_comments(); //lấy comment nổi bật
 
             $dsPosts = getStand_posts(); // lấy bài viết nổi bật
-            
+
             $listPartners = partner();
             // hiển thị dữ liệu ra view
             $view_name = 'page_home';
@@ -69,8 +69,7 @@ if (isset($_GET['act'])) {
                 if (!$productInCart) {
                     // Sản phẩm chưa có trong giỏ hàng, thêm mới
                     addToCart($MaSP, $MaDH, 'gio-hang');
-                }else{
-                   
+                } else {
                 }
             } else {
                 // Đơn hàng chưa tồn tại, tạo mới
@@ -85,32 +84,34 @@ if (isset($_GET['act'])) {
             include_once 'model/m_products.php';
             include_once 'model/m_cart.php';
 
-            if (!isset($_SESSION['user'])) {
-                $_SESSION['error'] = 'Bạn Chưa Đăng Nhập';
-                header("Location: " . $base_url . "user/login");
-                return;
+            $MaKH = $_SESSION['user']['MaKH'];
+            $cart = checkCart($MaKH);
+            var_dump($_POST['SoLuong']);
+            // Nếu giỏ hàng không tồn tại, tạo giỏ hàng mới và lấy id của đơn hàng vừa tạo
+            if (!$cart) {
+                $MaDH = // Tạo mã đơn hàng mới, có thể sử dụng timestamp hoặc một cách khác để đảm bảo tính duy nhất
+                    create_cart($MaKH, $MaDH);
+            } else {
+                $MaDH = $cart['MaDH'];
             }
-            if(isset($_POST['submit'])){
-                $MaKH = $_SESSION['user']['MaKH'];
-                $MaSP = $_POST['MaSP']; 
-                $MaDH = $_POST['MaDH'];
-                
-                $kq = checkCart($MaKH);
-                if ($kq) {
-                    // Đơn hàng đã tồn tại, lấy MaDH
-                    $MaDH = $kq['MaDH'];
-                    // Kiểm tra xem sản phẩm đã có trong giỏ hàng chưa
-                    $productInCart = checkProductInCart($MaDH, $MaSP);
-                    if ($productInCart) {
-                        // Sản phẩm đã có trong giỏ hàng, cập nhật số lượng
-                        $SoLuong = $_POST['SoLuong'];
-                        $Gia = $_POST['Gia']; 
-                        $TrangThai = 'gio-hang';  
-                        $TongTien = $SoLuong * $Gia;  
-                        updateQuantityInCart($MaSP, $MaDH, $SoLuong, $Gia, $TrangThai, $TongTien);
-                    }
+
+            // Xử lý các sản phẩm trong giỏ hàng
+            foreach ($_POST['SoLuong'] as $MaSP => $SoLuong) {
+                // Kiểm tra xem sản phẩm đã có trong giỏ hàng chưa
+                $productInCart = checkProductInCart($MaDH, $MaSP);
+
+                if ($productInCart) {
+                    // Nếu sản phẩm đã có trong giỏ hàng, cập nhật số lượng
+                    $Gia = $_POST['Gia'];// Lấy giá từ database hoặc từ dữ liệu POST, tùy thuộc vào cách bạn thực hiện
+                    $TrangThai = 'dat-hang';
+                    $TongTien = $_POST['SoLuong'] * $_POST['Gia'];
+                    updateQuantityInCart($MaSP, $MaDH, $SoLuong, $TrangThai, $TongTien);
+                } else {
+                    // Nếu sản phẩm chưa có trong giỏ hàng, thêm vào giỏ hàng
+                    addToCart($MaSP, $MaDH);
                 }
             }
+
 
 
             $_SESSION['success'] = "Cập Nhật Giỏ Hàng Thành Công";

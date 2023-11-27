@@ -11,6 +11,7 @@
    function getAll_categorisPost(){
     return pdo_query("SELECT * FROM loaibaiviet where TrangThai = 0");
    }
+   // admin
    function catePost_addNew($TenLoaiBV, $ThuTu, $TrangThai){
         return pdo_execute("INSERT INTO loaibaiviet(`TenLoaiBV`,`ThuTu`,`TrangThai`) VALUES(?,?,?)",$TenLoaiBV, $ThuTu, $TrangThai);
    }

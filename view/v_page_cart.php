@@ -1,6 +1,6 @@
 <nav aria-label="breadcrumb" class="section-p2" style="padding: 20px 0 30px 7.5%;">
     <ol class="breadcrumb">
-        <li class="breadcrumb-item" style="text-decoration: none; color: #212529;"><a href="#">Trang Chủ</a>
+        <li class="breadcrumb-item" style="text-decoration: none; color: #212529;"><a href="<?= $base_url ?>/page/home">Trang Chủ</a>
         </li>
         <li class="breadcrumb-item active" aria-current="page" style="text-decoration: none; color: #212529;">
             Giỏ Hàng</li>
@@ -27,6 +27,8 @@
         <div class="row">
             <div class="col-sm-8 mb-3 mb-sm-0">
                 <form action="<?= $base_url ?>/page/updateCart" method="post">
+                <input type="hidden" name="SoLuong">
+                <input type="hidden" name="Gia">
                     <table class="table ">
                         <thead>
                             <tr>
@@ -59,13 +61,13 @@
                             endforeach; ?>
                         </tbody>
                     </table>
-                    <div>
+                    <!-- <div>
                         <span>
                             <input type="submit" name="submit" class="btn btn-secondary mt-2" value="Cập Nhật Giỏ Hàng"></input>
                         </span>
-                    </div>
+                    </div> -->
                     <div class="col-12 mt-5">
-                        <a href="<?= $base_url ?>/page/payment" class="btn btn-warning" type="submit" style="padding: 10px 50px; font-size: 18px; font-weight: 600; margin-left: 72%; color: #ffffff">Thanh Toán</a>
+                        <button href="<?= $base_url ?>/page/payment" class="btn btn-warning" type="submit" name="submit" style="padding: 10px 50px; font-size: 18px; font-weight: 600; margin-left: 72%; color: #ffffff">Thanh Toán</button>
                     </div>
                 </form>
             </div>
@@ -122,4 +124,4 @@
             $("#ThanhTien" + index).text(total);
         });
     });
-</script> 
+</script>

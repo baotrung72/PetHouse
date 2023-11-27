@@ -1,8 +1,8 @@
 <div class="container-fluid" style="padding: 20px 0 30px 7.5%;">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="">Trang chủ</a></li>
-            <li class="breadcrumb-item"><a href="<?=$base_url?>/product/producy-total">Sản Phẩm</a></li>
+            <li class="breadcrumb-item"><a href="<?= $base_url ?>/page/home">Trang chủ</a></li>
+            <li class="breadcrumb-item"><a href="<?=$base_url?>/product/product-total">Sản Phẩm</a></li>
             <li class="breadcrumb-item active" aria-current="page">Danh Mục Sản Phẩm</li>
         </ol>
     </nav>
@@ -29,9 +29,9 @@
                             <p class="card-price d-n" style="font-size: 14px;">Giá: <strong><?= number_format($sp['Gia'], 0, ',', '.') ?> VNĐ</strong></p>
                         <?php endif; ?>
                         <div class="btn-buy d-flex text-center">
-                            <a href="<?= $base_url ?>/product/detail&id=<?= $sp['MaSP'] ?>" class="btn btn-warning" style=" margin-left: 15px;">Chi
+                            <a href="<?= $base_url ?>/product/detail&id=<?= $sp['MaSP'] ?>" class="btn btn-warning" style=" margin-left: 15px; color:#ffffff;">Chi
                                 Tiết</a>
-                            <a href="#" class="btn btn-warning" style=" margin-left: 50px;">Mua
+                            <a href="#" class="btn btn-warning" style=" margin-left: 50px; color:#ffffff;">Mua
                                 Ngay</a>
                         </div>
                     </div>
