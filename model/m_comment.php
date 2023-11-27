@@ -4,12 +4,7 @@
     function getStand_comments(){
         return pdo_query("SELECT * FROM binhluan bl INNER JOIN khachhang kh ON bl.MaKH = kh.MaKH where bl.NoiBat = 1");
     }
-    function getAll_cmtWKh(){
-        return pdo_query("SELECT  * FROM binhluan");
-    }
-    function comment_delete($id){
-        pdo_execute("DELETE from binhluan where MaBL = ?",$id);
-    }
+    
     function comment_add($MaKH, $MaSP, $NoiDung){
         pdo_execute("INSERT INTO binhluan(`MaKH`,`MaSP`,`NoiDung`) VALUES(?,?,?)",$MaKH,$MaSP,$NoiDung);
     }
@@ -24,5 +19,12 @@
     }
     function count_cmt($MaSP){
         return pdo_query_value("SELECT COUNT(*) from binhluan where MaSP = ?",$MaSP);
+    }
+    //admin
+    function getAll_cmtWKh(){
+        return pdo_query("SELECT  * FROM binhluan");
+    }
+    function comment_delete($id){
+        pdo_execute("DELETE from binhluan where MaBL = ?",$id);
     }
 ?>

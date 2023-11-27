@@ -27,8 +27,7 @@ function getFashion_Products(){
     return pdo_query("SELECT DISTINCT * FROM sanpham where MaDM in (6)  limit 8");
 }
 
-function prodduct_getbyIdcategory($id)
-{
+function prodduct_getbyIdcategory($id){
     return pdo_query("SELECT * FROM sanpham where MaDM = $id");
 }
 function getAll_service(){

@@ -13,6 +13,8 @@ if (isset($_GET['act'])) {
             $totalRevenue = Total_revenue(['TongTien']);
             $orderNew = count_order();
             $UserNew = count_UserNew();
+
+            $QuantityOrder = countOrder_forMonth();
             //hiển thị dữ liệu 
             $view_name = 'admin_dashboard';
             break;
@@ -216,7 +218,6 @@ if (isset($_GET['act'])) {
                 $NoiBat = $_POST['NoiBat'];
                 $Hinh;
                 
-
                 // Thêm mã xử lý upload ảnh
                 // Kiểm tra nếu người dùng chọn ảnh mới
                 if ($_FILES['Hinh']['error'] == 0) {
@@ -234,7 +235,6 @@ if (isset($_GET['act'])) {
                 Post_edit($MaBV, $TieuDe, $NoiDung, $TrangThai, $NoiBat, $Hinh);
                 header("Location: " . $base_url . "/admin/post");
                 $_SESSION['success'] = "Cập Nhật Bài Viết Thành Công!";
-
             }
 
 

@@ -1,6 +1,6 @@
 <nav aria-label="breadcrumb" class="section-p2" style="padding: 20px 0 30px 7.5%;">
     <ol class="breadcrumb">
-        <li class="breadcrumb-item" style="text-decoration: none; color: #212529;"><a href="#">Trang Chủ</a>
+        <li class="breadcrumb-item" style="text-decoration: none; color: #212529;"><a href="<?=$base_url?>/page/home">Trang Chủ</a>
         </li>
         <li class="breadcrumb-item" style="text-decoration: none; color: #212529;"><a href="#">Sản Phẩm</a></li>
 
@@ -17,7 +17,7 @@
             <div class="container-fuild">
                 <?php foreach ($dsdanhmuc as $dm) : ?>
                     <nav class="navbar bg-body-tertiary d-flex" style="padding-left: 42px;">
-                        <a class="dropdown-item" style="padding: 10px 0;" href="#"><?= $dm['TenDM'] ?></a>
+                        <a class="dropdown-item" style="padding: 10px 0;" href="<?= $base_url ?>/category/category-detail&id=<?= $dm['MaDM'] ?>"><?= $dm['TenDM'] ?></a>
                     </nav>
                     <hr style="margin: 0;">
                 <?php endforeach; ?>
@@ -39,9 +39,9 @@
                             <p class="card-price d-n" style="font-size: 14px;">Giá: <strong><?= number_format($sp['Gia'], 0, ',', '.') ?> VNĐ</strong></p>
                         <?php endif; ?>
                         <div class="btn-buy d-flex text-center">
-                            <a href="<?= $base_url ?>/product/detail&id=<?= $sp['MaSP'] ?>" class="btn btn-warning" style=" margin-left: 15px;">Chi
+                            <a href="<?= $base_url ?>/product/detail&id=<?= $sp['MaSP'] ?>" class="btn btn-warning" style=" margin-left: 15px; color:#ffffff;">Chi
                                 Tiết</a>
-                            <a href="#" class="btn btn-warning" style=" margin-left: 50px;">Mua
+                            <a href="#" class="btn btn-warning" style=" margin-left: 50px; color:#ffffff;">Mua
                                 Ngay</a>
                         </div>
                     </div>
@@ -70,9 +70,9 @@
                             <p class="card-price d-n" style="font-size: 14px;">Giá: <strong><?= number_format($sp['Gia'], 0, ',', '.') ?> VNĐ</strong></p>
                         <?php endif; ?>
                         <div class="btn-buy d-flex text-center">
-                            <a href="<?= $base_url ?>/product/detail&id=<?= $sp['MaSP'] ?>" class="btn btn-warning" style=" margin-left: 15px;">Chi
+                            <a href="<?= $base_url ?>/product/detail&id=<?= $sp['MaSP'] ?>" class="btn btn-warning" style=" margin-left: 15px; color:#ffffff;">Chi
                                 Tiết</a>
-                            <a href="#" class="btn btn-warning" style=" margin-left: 50px;">Mua
+                            <a href="#" class="btn btn-warning" style=" margin-left: 50px; color:#ffffff;">Mua
                                 Ngay</a>
                         </div>
                     </div>
@@ -120,9 +120,9 @@
                                 <p class="card-price" style="font-size: 14px;">Giá: <strong><?= number_format($sp['Gia'], 0, ',', '.') ?> VNĐ</strong></p>
                             <?php endif; ?>
                             <div class="btn-buy d-flex text-center">
-                                <a href="<?= $base_url ?>/product/detail&id=<?= $sp['MaSP'] ?>" class="btn btn-warning" style=" margin-left: 15px;">Chi
+                                <a href="<?= $base_url ?>/product/detail&id=<?= $sp['MaSP'] ?>" class="btn btn-warning" style=" margin-left: 15px; color:#ffffff;">Chi
                                     Tiết </a>
-                                <a href="#" class="btn btn-warning" style=" margin-left: 50px;">Mua
+                                <a href="#" class="btn btn-warning" style=" margin-left: 50px; color:#ffffff;">Mua
                                     Ngay</a>
                             </div>
                         </div>
@@ -158,9 +158,9 @@
                                 <p class="card-price" style="font-size: 14px;">Giá: <strong><?= number_format($sp['Gia'], 0, ',', '.') ?> VNĐ</strong></p>
                             <?php endif; ?>
                             <div class="btn-buy d-flex text-center">
-                                <a href="<?= $base_url ?>/product/detail&id=<?= $sp['MaSP'] ?>" class="btn btn-warning" style=" margin-left: 15px;">Chi
+                                <a href="<?= $base_url ?>/product/detail&id=<?= $sp['MaSP'] ?>" class="btn btn-warning" style=" margin-left: 15px; color:#ffffff;">Chi
                                     Tiết </a>
-                                <a href="#" class="btn btn-warning" style=" margin-left: 50px;">Mua
+                                <a href="#" class="btn btn-warning" style=" margin-left: 50px; color:#ffffff;">Mua
                                     Ngay</a>
                             </div>
                         </div>

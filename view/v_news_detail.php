@@ -1,5 +1,11 @@
-<div class="container ">
-<h2 class="mb-5 mt-5" style="color: #fcb000; margin-bottom: 30px;">Chi Tiết Bài Viết</h2>
+<div class="container mb-5">
+<nav style="--bs-breadcrumb-divider: '>'; padding: 15px 0;" aria-label="breadcrumb" pad>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="<?=$base_url?>/news/news" style="text-decoration: none;">Bài Viết</a></li>
+            <li class="breadcrumb-item active fw-semibold" aria-current="page" style="color: black;">Chi Tiết</li>
+        </ol>
+    </nav>
+<h2 class="mb-5" style="color: #fcb000; margin-bottom: 30px;">Chi Tiết Bài Viết</h2>
 
     <div class="accordion" id="accordionExample">
         <div class="accordion-item">

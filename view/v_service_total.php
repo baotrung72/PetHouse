@@ -28,9 +28,9 @@
                             <p class="card-price d-n" style="font-size: 14px;">Giá: <strong><?= number_format($dv['Gia'], 0, ',', '.') ?> VNĐ</strong></p>
                         <?php endif; ?>
                         <div class="btn-buy d-flex text-center">
-                            <a href="<?= $base_url ?>/category/detail&id=<?= $dv['MaDV'] ?>" class="btn btn-warning" style=" margin-left: 15px;">Chi
+                            <a href="<?= $base_url ?>/category/detail&id=<?= $dv['MaDV'] ?>" class="btn btn-warning" style=" margin-left: 15px; color:#ffffff;">Chi
                                 Tiết</a>
-                            <a href="#" class="btn btn-warning" style=" margin-left: 50px;">Mua
+                            <a href="#" class="btn btn-warning" style=" margin-left: 50px; color:#ffffff;">Mua
                                 Ngay</a>
                         </div>
                     </div>
